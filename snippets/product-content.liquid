@@ -1,0 +1,604 @@
+{% if featured %}
+  {% assign collection = collections[featured_collection] %}
+{% endif %}
+
+{% if section.blocks.size > 0 %}
+  <div class="sidebar four columns toggle-all--{{ section.settings.toggle }}">
+    <div class="sidebar-wrap">
+      {% comment %}description____{{ section.settings.description_text }}{% endcomment %}
+      {% for block in section.blocks %}
+        <div class="sidebar-block" {{ block.shopify_attributes }}>
+          {% if block.type == 'menu' %}
+           
+          <div class="full title_mobile_padding">    
+          <h2 class="p_title {{ block.settings.block_hwhole_title }} full {{ block.settings.show_content_title }} new_produt_title  {{ block.settings.side_border_title }}">{{ product.title }}</h2>
+            <p> {{ block.settings.content_block_name }} </p>  
+          </div>
+          
+          
+          <style>
+          .product_content_section h2.p_title {color: {{ block.settings.product_titlee_color }} !important;
+          
+            margin-top:{{ block.settings.margin_top_title }}px;
+            margin-top:{{ block.settings.margin_top_title1 }}px;
+            
+            
+            margin-bottom:{{ block.settings.margin_bottom_title }}px;
+            margin-bottom:{{ block.settings.margin_bottom_title1 }}px;
+            
+
+            
+            position: relative;
+              
+            
+            
+            padding-top:{{ block.settings.padding_top_title }}px;
+            padding-top:{{ block.settings.padding_top_title1 }}px;
+            
+            padding-bottom:{{ block.settings.padding_bottom_title }}px;
+            padding-bottom:{{ block.settings.padding_bottom_title1 }}px;
+            
+            
+            padding-left:{{ block.settings.padding_left_title }}px;
+            padding-left:{{ block.settings.padding_left_title1 }}px;
+            
+            padding-right:{{ block.settings.padding_right_title }}px;
+            padding-right:{{ block.settings.padding_right_title1 }}px;
+            
+            line-height:{{ block.settings.line_height_titles }};
+            
+            background:{{ block.settings.background_title_color }};
+            
+            font-size:{{ block.settings.fontsize_desktop_titles }}px;
+            font-size:{{ block.settings.fontsize_desktop_title1 }}px;
+            text-align:{{ block.settings.block_alignment_title }};
+            
+            
+            
+             border-top-left-radius:{{ block.settings.Border_top_radious_titles }}px;
+            border-top-right-radius:{{ block.settings.Border_top_radious_titles }}px;
+            border-bottom-left-radius:{{ block.settings.Border_bottom_radious_titles }}px;
+            border-bottom-right-radius:{{ block.settings.Border_bottom_radious_titles}}px;
+            
+            
+            border-top-left-radius:{{ block.settings.Border_top_radious_title1 }}px;
+            border-top-right-radius:{{ block.settings.Border_top_radious_title1 }}px;
+            border-bottom-left-radius:{{ block.settings.Border_bottom_radious_title1 }}px;
+            border-bottom-right-radius:{{ block.settings.Border_bottom_radious_title1}}px;
+
+            
+            }
+            
+            
+            
+            
+             {% if block.settings.border_enble_title %}
+            .product_content_section h2.p_title.border_full {
+             border:{{ block.settings.Border_thickness_title }}px {{ block.settings.border_type_title }} {{ block.settings.border_title_color }};
+             border:{{ block.settings.Border_thickness_title1 }}px {{ block.settings.border_type_title }} {{ block.settings.border_title_color }};
+
+            }
+            
+            
+            .product_content_section h2.p_title.border_top {
+             border-top:{{ block.settings.Border_thickness_title }}px {{ block.settings.border_type_title }} {{ block.settings.border_title_color }};
+             border-top:{{ block.settings.Border_thickness_title1 }}px {{ block.settings.border_type_title }} {{ block.settings.border_title_color }};
+
+            }
+            
+            
+            .product_content_section h2.p_title.border_top {
+             border-top:{{ block.settings.Border_thickness_title }}px {{ block.settings.border_type_title }} {{ block.settings.border_title_color }};
+             border-top:{{ block.settings.Border_thickness_title1 }}px {{ block.settings.border_type_title }} {{ block.settings.border_title_color }};
+
+            }
+            
+            
+            .product_content_section h2.p_title.border_top_and_side {
+             border:{{ block.settings.Border_thickness_title }}px {{ block.settings.border_type_title }} {{ block.settings.border_title_color }};
+             border:{{ block.settings.Border_thickness_title1 }}px {{ block.settings.border_type_title }} {{ block.settings.border_title_color }};
+              border-bottom:none;
+
+            }
+            
+            
+             .product_content_section h2.p_title.border_top_and_bottom {
+             border:{{ block.settings.Border_thickness_title }}px {{ block.settings.border_type_title }} {{ block.settings.border_title_color }};
+             border:{{ block.settings.Border_thickness_title1 }}px {{ block.settings.border_type_title }} {{ block.settings.border_title_color }};
+               border-left:none;
+               border-right:none;
+
+            }
+            
+            
+            .product_content_section h2.p_title.border_bottom {
+             border-bottom:{{ block.settings.Border_thickness_title }}px {{ block.settings.border_type_title }} {{ block.settings.border_title_color }};
+             border-bottom:{{ block.settings.Border_thickness_title1 }}px {{ block.settings.border_type_title }} {{ block.settings.border_title_color }};
+
+            }
+            
+            
+            
+            .product_content_section h2.p_title.border_bottom_and_side {
+             border:{{ block.settings.Border_thickness_title }}px {{ block.settings.border_type_title }} {{ block.settings.border_title_color }};
+             border:{{ block.settings.Border_thickness_title1 }}px {{ block.settings.border_type_title }} {{ block.settings.border_title_color }};
+             border-top:none;
+            }
+            
+            .product_content_section h2.p_title.side_border {
+             border:{{ block.settings.Border_thickness_title }}px {{ block.settings.border_type_title }} {{ block.settings.border_title_color }};
+             border:{{ block.settings.Border_thickness_title1 }}px {{ block.settings.border_type_title }} {{ block.settings.border_title_color }};
+              border-top:none;
+               border-bottom:none;
+
+            }
+            
+            
+            
+            {% endif %}
+            
+            
+              .title_mobile_padding {padding-left:{{ block.settings.side_dekrop_mobile_title }}px; padding-right:{{ block.settings.side_dekrop_mobile_title }}px;}
+             .title_mobile_padding {padding-left:{{ block.settings.side_dekrop_mobile_title1 }}px; padding-right:{{ block.settings.side_dekrop_mobile_title1 }}px;}
+            
+            .product_content_section h2.p_title.left {margin-left:-{{ block.settings.side_dekrop_mobile_title }}px}
+             .product_content_section h2.p_title.right {margin-right:-{{ block.settings.side_dekrop_mobile_title }}px}
+            
+            .product_content_section h2.p_title.left {margin-left:-{{ block.settings.side_dekrop_mobile_title1 }}px;     float: left;}
+             .product_content_section h2.p_title.right {margin-right:-{{ block.settings.side_dekrop_mobile_title1 }}px; float:right;}
+            
+            
+            .Mobile_Only { display:none;}
+            
+            
+             
+            
+            @media only screen and (max-width: 600px) {
+              
+
+              {% if block.settings.side_margin_mobie_title %} 
+              
+              
+               
+              .title_mobile_padding {padding-left:15px; padding-right:15px;}     
+              .title_mobile_padding {padding-left:{{ block.settings.Cautm_side_mobile_title }}px; padding-right:{{ block.settings.Cautm_side_mobile_title }}px;}
+              
+                 .product_content_section h2.p_title.right {margin-right:-{{ block.settings.Cautm_side_mobile_title }}px;}
+              .product_content_section h2.p_title.left {margin-left:-{{ block.settings.Cautm_side_mobile_title }}px;}
+              
+              {% endif %}
+              
+              
+              .Mobile_Only { display:block;}
+              .Desktop_Only { display:none;}
+              
+              
+              .product_content_section h2.p_title {font-size:{{ block.settings.fontsize_mobile_titles }}px;}
+              .product_content_section h2.p_title {font-size:{{ block.settings.fontsize_mobile_title1 }}px;}
+              
+              
+               {% if block.settings.keep_fnot_mobile_title %} 
+              
+              .product_content_section h2.p_title {font-size:{{ block.settings.fontsize_mobile_titles }}px;
+            font-size:{{ block.settings.fontsize_mobile_title1 }}px;}
+              
+              
+           {% endif %}
+              
+              
+           
+              
+              
+              
+               }
+            
+            
+       
+            
+          </style>
+          {% elsif block.type == 'page' %}
+                 {% if settings.product_review_app %}
+       <div class="full product_review_p">
+       <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+       </div>
+        {% endif %}
+       {% if settings.product_reviify_app %}
+       <div class="full product_review_p">
+       <div id="shop_booster_rate_6" product-id="{{ product.id }}"></div>
+       </div>
+       {% endif %}
+          
+    
+          {% elsif block.type == 'filter_by_tag' %}
+            
+          
+           <div id="" class="full my_varaints">
+{% unless product.options.size == 1 and product.variants[0].title == 'Default Title' %}
+              {% for option in product.options_with_values %}
+                <div class="selector-wrapper js product-form__item">
+                  <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">
+                    {{ option.name }}
+                  </label>
+                  <div>
+                    
+                    {% for value in option.values %}
+                      {% if option.name contains "Color" %}
+                        {% for variant in product.variants %}
+                          {%- assign display = "block" -%}
+                          {% if variant.image and variant.title contains value%}
+                            {%- assign img = variant.image | img_url: "large" -%}
+                            {%- assign display = "none" -%}
+                          {% endif %}
+                        {% endfor %}
+                      	
+                    
+                    <span onclick="colorSwatchHandler('{{value}}');" style="background-color:{{value}}; width:40px;height:40px;display:inline-block;background-position:center;" class="{{value}} color-swatch my_color_swatches color_chart" title="{{value}}"></span>
+                    
+                    
+                    {% endif %}
+                    {% endfor %}
+                    
+                       {% for value in option.values %}
+                      {% if option.name contains "Size" %}
+                        {% for variant in product.variants %}
+                          {%- assign display = "block" -%}
+                          {% if variant.image and variant.title contains value%}
+                            {%- assign img = variant.image | img_url: "large" -%}
+                            {%- assign display = "none" -%}
+                          {% endif %}
+                        {% endfor %}
+                      	<span onclick="colorSwatchHandler('{{value}}');" style="background-color:{{value}};width:40px;height:40px;display:inline-block;background-position:center;" class="color-swatch boxes_swtic zise_chartt" title="{{value}}">{{value}}</span>
+                      {% endif %}
+                    {% endfor %}
+                    
+                  </div>
+                  <select style="display:{{display}}" class="single-option-selector single-option-selector-{{ section.id }} product-form__input" id="SingleOptionSelector-{{ forloop.index0 }}" data-index="option{{ forloop.index }}">
+                    {% for value in option.values %}
+                    	<option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+              {% endfor %}
+            {% endunless %}
+			<script>
+              function colorSwatchHandler(color) {
+                var colorOptionElm = document.querySelector('select option[value="' + color + '"]'),
+                    colorSpanElm = document.querySelector('span[title="' + color + '"]'),
+                    activeSwatch = document.querySelector('.color-swatch.active'),
+                    change = new Event('change', {bubbles: true, cancelable: false});
+                if (activeSwatch) {
+                  activeSwatch.className = activeSwatch.className.replace(' active', '');
+                }
+                colorOptionElm.selected = "selected";
+                colorSpanElm.className += ' active';
+                colorOptionElm.parentElement.dispatchEvent(change);
+              }
+        	</script>
+            <select name="id" id="ProductSelect" data-section="{{ section.id }}" class="product-form__variants no-js" style="display:none;">
+  {% for variant in product.variants %}
+    {% if variant.available %}
+      <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">
+        {{ variant.title }}
+      </option>
+    {% else %}
+      <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+    {% endif %}
+  {% endfor %}
+</select>
+       </div>
+          
+          <script>
+            $(document).ready(function() {
+            $('.zise_chartt').on('click', function(){
+    $('.zise_chartt').removeClass('current_my');
+    $(this).addClass('current_my');
+});
+              
+              });
+            
+            
+             $(document).ready(function() {
+            $('.color_chart').on('click', function(){
+    $('.color_chart').removeClass('current_my');
+    $(this).addClass('current_my');
+});
+              
+              });
+          
+          </script>
+       
+       
+       
+       <script>
+       $(document).ready(function() {
+   $('.single-option-selector').on(
+       'change',
+       function() {
+           var selectedValues = $.map(
+               $('.single-option-selector'),
+               function(element) {
+                   var $element = $(element);
+                   var type = $element.attr('type');
+                   var currentOption = {};
+
+                   if (type === 'radio' || type === 'checkbox') {
+                       if ($element[0].checked) {
+                           currentOption.value = $element.val();
+                           currentOption.index = $element.data('index');
+
+                           return currentOption;
+                       } else {
+                           return false;
+                       }
+                   } else {
+                       currentOption.value = $element.val();
+                       currentOption.index = $element.data('index');
+
+                       return currentOption;
+                   }
+               }
+           );
+           var product = JSON.parse(
+               document.getElementById('ProductJson').innerHTML
+           );
+           var variant = product.variants.filter(function(v) {
+               var condition = selectedValues.every(function(values) {
+                   return v[values.index] == values.value;
+               });
+               return condition;
+           });
+           if (variant != null && variant.length == 1) {
+               $('#ProductSelect').val(variant[0].id);
+           }
+           else {
+            //disable add to cart button
+           }
+       }
+   );
+});
+       </script>
+          
+
+          
+          {% elsif block.type == 'filter_by_type' %}
+           {% if settings.enable_quantity %}
+       <div class="quantity_wrapper">
+         <label for="product-quantity-selector">
+            Quantity
+          </label>
+         <div class="full product_qtyy">
+           <div class="cart__qty">
+             <div class="number-input">
+               <span onclick="this.parentNode.querySelector('input[type=number]').stepDown()" >-</span>
+                 <input id="product-quantity-selector" class="product-form__input product-form__input--quantity" type="number"
+                    name="quantity" value="1" min="1" pattern="[0-9]*"
+                    data-quantity-input data-quantity-item="{{ product.first_available_variant }}" data-quantity-input-desktop>
+               <span onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</span>
+             </div>
+           </div>
+         </div>
+       </div>
+     {% endif %}
+          <div class="full add_to_art">
+              
+                <button type="submit" name="add"
+                  {% unless current_variant.available %} aria-disabled="true"{% endunless %}
+                  aria-label="{{ settings.add_to_cart_text }}"
+                 
+                  data-add-to-cart>
+                  <span data-add-to-cart-text>
+                    {% unless current_variant.available %}
+                      {{ 'products.product.sold_out' | t }}
+                    {% else %}
+                      {{ 'products.product.add_to_cart' | t }}
+                    {% endunless %}
+                  </span>
+                  <span class="hide" data-loader>
+                    {% include 'icon-spinner' %}
+                  </span>
+                </button>
+                {% if section.settings.enable_payment_button %}
+                  {{ form | payment_button }}
+                {% endif %}
+              
+            </div>
+
+          {% elsif block.type == 'filter_by_collection' %}
+             {% unless product.compare_at_price == blank %}
+         <span class="save_date">You save {{ product.compare_at_price | minus: product.price |money}}
+({{ product.compare_at_price_max | minus:product.price | times:100 | divided_by:product.compare_at_price_max }}%)</span>
+         
+       {% endunless %}   
+          
+
+          {% elsif block.type == 'badge_menu' %}
+          
+          
+           {% if section.blocks.size > 0 %}
+            {%- if block.settings.trust_banner -%}
+       <div class="full truat_badg">
+         <img src="{{ block.settings.trust_banner | img_url: 'original' }}" alt="" />
+       </div>
+      {%- else -%}
+       <div class="full truat_badg">
+         <img src="https://cdn.shopify.com/s/files/1/0272/3014/2602/files/payment_03_1024x1024_1df4552b-e573-4b4d-ad9e-0f540fd65cde_1024x1024.jpg?v=1575874394" alt="" />
+       </div>
+          
+           
+       {%- endif -%}
+{% endif %}
+          
+          
+          {% elsif block.type == 'filter' %}
+            
+
+            {% assign headline_length = headlines | split: '^' | size %}
+
+            
+
+          {% elsif block.type == 'text' %}
+            <h4 class="toggle">{{ block.settings.title }}<span class="right icon-down-arrow"></span></h4>
+            <ul class="toggle_list content_block">
+              <li>{{ block.settings.text }}</li>
+            </ul>
+          {% elsif block.type == 'recently_viewed'%}
+          
+           <div class="full p_price">
+             <span>  {% include 'product-price', variant: current_variant, show_vendor: section.settings.show_vendor %}</span>         
+           </div>
+          
+         <!--     Additional description      -->
+          
+ <div class="additional_wrapper">
+   {% if settings.enable_image %}
+     <div class="image_wrapper">
+       {% assign image1_url = settings.image1 %}
+       {% assign image2_url = settings.image2 %}
+       {% if image1_url != blank %}
+         <div class="image_1">
+           {% if settings.enable_change_image1 %}
+             {% assign image1_width = settings.image1_width %}
+           {% else %}
+             {% assign image1_width = "unset" %}
+           {% endif %}
+            <img src="{{ image1_url | img_url : '500x' }}" style="width: {{ image1_width }}px;">
+         </div>
+       {% endif %}
+       {% if image2_url != blank %}
+         <div class="image_2">
+           {% if settings.enable_change_image2 %}
+             {% assign image2_width = settings.image2_width %}
+           {% else %}
+             {% assign image2_width = "unset" %}
+           {% endif %}
+            <img src="{{ image2_url | img_url : '500x' }}" style="width: {{ image2_width }}px;">
+         </div>
+       {% endif %}
+     </div>
+   {% endif %}
+   {% if settings.enable_text %}
+     <div class="text_wrapper" style="background-color: {{ settings.description_background_color }};">
+       {{ settings.description_text }}
+       {% style %}
+         .additional_wrapper .text_wrapper p{
+           color: {{ settings.font_color }};
+         }
+       {% endstyle %}
+     </div>
+   {% endif %}
+   {% comment %}
+   {% if settings.enable_quantity %}
+     <div class="quantity_wrapper">
+       <div class="full product_qtyy">
+         <div class="cart__qty">
+           <div class="number-input">
+             <span onclick="this.parentNode.querySelector('input[type=number]').stepDown()" >-</span>
+               <input id="updates_large_{{ item.key }}" class="cart__qty-input quantity" type="number"
+                  name="updates[]" value="1" min="1" pattern="[0-9]*"
+                  data-quantity-input data-quantity-item="{{ forloop.index }}" data-quantity-input-desktop>
+             <span onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus">+</span>
+           </div>
+         </div>
+       </div>
+     </div>
+   {% endif %}
+   {% endcomment %}
+ </div>
+          
+<!--      End      -->
+          {% elsif block.type == 'filter_by_vendor'%}
+          
+          
+          
+           {%- if settings.enable_delivery -%}
+       <div class="full ship_area">
+         
+         {%- if settings.enable_ship_head -%}
+         <h3 class="full">{{ settings.develry_heading }} </h3>
+         {%- endif -%}
+         {%- if settings.enable_sub_head -%}
+         <span class="full">{{ settings.deliver_content }}</span>
+         {%- endif -%}
+         
+         
+         
+         {% assign total=0 %}
+{%for variant in product.variants %}
+{% capture i %}{{ total | plus:variant.inventory_quantity }}{%endcapture%}
+{% assign total = i %}
+{%endfor%}
+         
+         
+         {%- if settings.enable_stock -%}
+         <h5 class="full"> {{ settings.stock_heading_before }} <strong>{{ total }} </strong> {{ settings.stock_heading_after }} </h5>
+         {%- endif -%}
+         {%- if settings.enable_vistor -%}
+         <p style="display:block !mportant" class="full count_er product_extras_list"> {{ settings.watcking_emoji }} <strong><font class="random_extra"  data-extratype="random" data-extrafrequency="25" data-extrafrom="198" data-extrato="245">{{ settings.watcking_number }}</font></strong> {{ settings.watcking_text_after }} </p>
+          {%- endif -%}
+       </div>
+        {%- endif -%}
+        <script src="https://d25euzqev2e9fd.cloudfront.net/scripts/sniper.js?v=0.06" async></script>
+       
+<script>
+function random(min,max)
+{
+    return Math.floor(Math.random()*(221-1+1)+min);
+}
+
+var initial = random(1, 221);
+var count = initial;
+
+setInterval(function() {
+  var variation = random(-5,5);
+
+  count += variation
+  $("#counterrr").html(count)
+
+}, 20000)
+
+</script>
+          
+          
+          
+ {% elsif block.type == 'product_description'%}
+          
+          <div class="full product_new_desp">
+         {{ product.description }}
+       </div>
+          
+          
+          
+           {% elsif block.type == 'grantee_box'%}
+          {% if section.blocks.size > 0 %}
+       
+
+       <div class="full days_grantee">
+         
+         
+         {%- if block.settings.granyee_image -%}  
+     <img src="{{ block.settings.granyee_image | img_url: 'original' }}" height="125" style="display: block; margin-left: auto; margin-right: auto;" alt="" />
+      
+      {%- else -%} 
+       <img src="https://cdn.shopify.com/s/files/1/0271/0405/1333/files/ezgif.com-webp-to-png_40_480x480.png?v=1576129052" height="125" style="display: block; margin-left: auto; margin-right: auto;">
+      
+      {%- endif -%} 
+         
+  <h3>{{ block.settings.granyee_heading }}</h3>
+  <p>{{ block.settings.granyee_content }}</p>
+
+       </div>
+     
+      
+      {% endif %} 
+          
+
+          
+          {% endif %}
+        </div>
+      
+     
+      
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

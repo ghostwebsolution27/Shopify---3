@@ -1,0 +1,126 @@
+{% include 'call-to-action'  %}
+{% include 'love-feel' %}
+
+
+
+<script type="text/javascript">
+    $(document).on('ready', function() {
+      
+ $('.center').slick({
+  centerMode: true,
+  centerPadding: '60px',
+   slidesToShow: 3,
+                slidesToScroll: 3,
+  responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+      }
+    }
+  ]
+});
+		
+    });
+</script> 
+<div class="full main_footer">
+  <div class="container">
+    <div class="col-sm-3">
+      <div class="full footer_ist_sec">
+          {%- if settings.footer_logo -%}
+        <img src="{{ settings.footer_logo | img_url: 'original' }}" alt="" />
+           {%- else -%} 
+      <img src="https://cdn.shopify.com/s/files/1/0272/3014/2602/files/logo2-01_1024x1024_bb621b9a-05b3-4dd3-a150-d413e79eaee4_1024x1024.png?v=1575873960" alt="" />
+      
+      {%- endif -%} 
+    
+        <p>{{ settings.footer_logo_content }}</p>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <h2 class="footer-titles">{{ settings.footer_onne_heading }}</h2>
+      
+       {% assign linklist = linklists[settings.footer_onne_linklist] %}
+      <ul>
+        
+        
+        
+        
+        {% for link in linklist.links %}
+        <li> <a href="{{ link.url }}">{{ link.title }}</a></li>
+{% endfor %}
+      </ul>
+    </div>
+    <div class="col-sm-3">
+      <h2 class="footer-titles">{{ settings.footer_two_heading }}</h2>
+      {% assign linklist = linklists[settings.footer_two_linklist] %}
+      <ul>
+    {% for link in linklist.links %}
+        <li> <a href="{{ link.url }}">{{ link.title }}</a></li>
+{% endfor %}
+      </ul>
+    </div>
+    <div class="col-sm-3 last_ftr">
+     <h2 class="footer-titles">{{ settings.footer_fouth_heading }}</h2>
+      {% assign linklist = linklists[settings.footer_fouth_last] %}
+      <ul>
+    {% for link in linklist.links %}
+        <li> <a href="{{ link.url }}">{{ link.title }}</a></li>
+{% endfor %}
+      </ul>
+      
+    </div>
+  </div>
+  
+  
+  <div class="full copy_right">
+   <div class="container">
+   <div class="col-xs-6">
+      <span> {{ settings.copy_heading }}</span>
+     </div>
+     <div class="col-sm-3 right_pay">
+       {%- if settings.copy_heading_image -%}
+       <img src="{{ settings.copy_heading_image | img_url: 'original' }}" alt="" />
+        {%- else -%} 
+      <img src="https://cdn.shopify.com/s/files/1/0272/3014/2602/files/payments-cone_1024x1024_e333aa4b-a17e-4cde-994b-c0d039931b15_1024x1024.png?v=1575874049" alt="" />
+      
+      {%- endif -%} 
+    
+     </div>
+    </div>
+  </div>
+  
+</div>
+
+<style>
+
+  .main_footer {
+    background-color: {{ settings.footer_bg_color }};
+}
+  h2.footer-titles {
+    color:  {{ settings.footer_headings_color }};
+  }
+  .main_footer ul li a{
+    color:  {{ settings.footer_links_color }};
+  }
+  .main_footer ul li a:hover {
+    color:  {{ settings.footer_links_color_hover }};
+}
+  .copy_right span {color:{{ settings.copy_heading_color }};}
+
+  .free_heading h1 {font-size: {{ settings.page_font_siz }}pt; }
+</style>
+
+
+
+

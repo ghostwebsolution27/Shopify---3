@@ -1,0 +1,99 @@
+<div class="description-section">
+  <div class="div_wrapper">
+    {% if section.settings.enable_image %}
+      <div class="image_wrapper">
+        <div class="left_image">
+          <img class="lazyload"
+             data-widths="[180, 360, 540, 720, 900, 1080]"
+             data-aspectratio="{{ section.settings.image1 }}"
+             data-sizes="auto"
+             alt="{{ section.settings.image1.alt }}">
+        </div>
+        <div class="right_image">
+          <img class="lazyload"
+            data-widths="[180, 360, 540, 720, 900, 1080]"
+            data-aspectratio="{{ section.settings.image2 }}"
+            data-sizes="auto"
+            alt="{{ section.settings.image2.alt }}">
+          </div>
+      </div>
+    {% endif %}
+    {% if section.settings.enable_text %}
+      <div class="text_wrapper">
+		{{ section.settings.text }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+
+{% stylesheet %}
+
+
+
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+
+{% schema %}
+  {
+    "name": "Section name",
+    "settings": [
+	  {
+        "type": "checkbox",
+        "id": "enable_image",
+        "label": "Show image",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "image1",
+        "label": "First image"
+      },
+	  
+	  {
+        "type": "image_picker",
+        "id": "image2",
+        "label": "Second image"
+      },
+	  {
+        "type": "checkbox",
+        "id": "enable_text",
+        "label": "Show text",
+        "default": true
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>text</p>"
+      },
+	  {
+         "type":      "color",
+         "id":        "background_color",
+         "label":     "Background color",
+         "default":   "#000000",
+         "info":      "Background color"
+      },
+	  {
+          "type":      "range",
+          "id":        "title_size",
+          "min":       5,
+          "max":        50,
+          "step":       1,
+          "unit":       "px",
+          "label":     "font size",
+          "default":   40
+      },
+      {
+         "type":      "color",
+         "id":        "font_color",
+         "label":     "Font color",
+         "default":   "#000000",
+         "info":      "Font color"
+      }
+    ]
+  }
+{% endschema %}

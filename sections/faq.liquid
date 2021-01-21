@@ -1,0 +1,232 @@
+<div class="full faq_sections">
+
+{% if section.blocks.size > 0 %}
+<div class="full free_heading faqq_heading">
+  <div class="container">
+    <h1>{{ section.settings.faq_heading }}</h1>
+    <span>{{ section.settings.faq_heading_sub }}</span>
+  
+  </div>
+
+</div>
+
+<div class="full faq_main">
+<div class="cont_container">
+  <div class="faq_container">
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    
+    {% for block in section.blocks %}
+    {% assign sham = 1 %}
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingOne">
+        <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{% increment sham %}" aria-expanded="false" aria-controls="collapseOne">
+          {{ block.settings.faq_head }}
+        </a>
+      </h4>
+      </div>
+      {% assign sham2 = 1 %}
+      <div id="{% increment sham2 %}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+        <div class="panel-body">
+          {{ block.settings.faq_content }}
+        </div>
+      </div>
+    </div>
+    
+     {% endfor %}
+   
+    </div>
+    
+    <a class="red_rexx for_faq_page" href="{{ settings.read_rece_text_link }}">{{ section.settings.read_rece_text }} <i class="fa fa-arrow-right"></i></a>
+    <a class="red_rexx for_product_page" href="{{ settings.read_rece_text_link }}">{{ settings.read_rece_text }} <i class="fa fa-arrow-right"></i></a>
+    
+    
+  </div>
+</div>
+</div>
+{% endif %}
+
+</div>
+
+<script>
+  
+  
+  $(function() {
+  $('.faq_container .panel-default').click(function() { // when a .myDiv is clicked
+    $('.faq_container .panel-default').not(this).removeClass('opne_on')
+    $(this).toggleClass('opne_on')
+  })
+})
+  
+  
+  
+
+  
+</script>
+
+
+<style>
+
+.free_heading h1 {
+    color:{{ section.settings.faq_heading_color }};
+}
+  .free_heading span {
+    color: {{ section.settings.faq_heading_sub_color }};
+  }
+  
+  
+  
+  
+  .faq_main .panel-default.opne_on, .faq_main .panel-default.opne_on .panel-heading, .faq_main .panel-default.opne_on .panel-collapse .panel-body, .panel-default.opne_on>.panel-heading a[aria-expanded="true"] {
+  
+  background: {{ section.settings.bg_color_active }};
+    color: {{ section.settings.bg_color_active_color }};
+  }
+  
+  a.red_rexx {
+  
+    color: {{ section.settings.read_rece_text_color }};
+    background: {{ section.settings.read_rece_bg_color }};
+    border: 4px solid {{ section.settings.read_rece_border_color }};
+  
+  }
+  a.red_rexx:hover {
+    color: {{ section.settings.read_rece_text_color_hover }};
+    background: {{ section.settings.read_rece_bg_color_hover }};
+    border: 4px solid {{ section.settings.read_rece_border_color_hover }};
+  
+  }
+  
+  .panel-default>.panel-heading { background-color: {{ section.settings.faq_hbox_color }};}
+</style>
+
+
+
+
+{% schema %}
+  {
+    "name": "Faq",
+    "max_blocks": 200,
+    "settings": [
+
+	
+
+      {  
+         "type":"text",
+         "id":"faq_heading",
+         "label":"Heading"
+      },
+      {
+            "type": "color",
+            "id": "faq_heading_color",
+            "label": "Heading Color"
+       },
+        
+      {  
+         "type":"text",
+         "id":"faq_heading_sub",
+         "label":"Sub Heading"
+      },
+       {
+            "type": "color",
+            "id": "faq_heading_sub_color",
+            "label": "Sub Heading Color"
+          },
+
+          {
+            "type": "color",
+            "id": "faq_hbox_color",
+            "label": "Faq Box Color"
+          },
+
+
+         {
+            "type": "color",
+            "id": "bg_color_active",
+            "label": "Faq Active background Color"
+          },
+
+         {
+            "type": "color",
+            "id": "bg_color_active_color",
+            "label": "Faq Active text Color"
+          },
+
+          {
+            "type": "text",
+            "id": "read_rece_text",
+            "label": "Button Text"
+          },
+
+         {
+            "type": "url",
+            "id": "read_rece_text_link",
+            "label": "Button Url"
+          },
+         {
+            "type": "color",
+            "id": "read_rece_text_color",
+            "label": "Button Text Color"
+          },
+          {
+            "type": "color",
+            "id": "read_rece_border_color",
+            "label": "Button Border Color"
+          },
+         {
+            "type": "color",
+            "id": "read_rece_bg_color",
+            "label": "Button Color"
+          },
+{
+            "type": "color",
+            "id": "read_rece_text_color_hover",
+            "label": "Button Text Color On Hover"
+          },
+         {
+            "type": "color",
+            "id": "read_rece_bg_color_hover",
+            "label": "Button Color On Hover"
+          },
+{
+            "type": "color",
+            "id": "read_rece_border_color_hover",
+            "label": "Button Border Color On Hover"
+          }
+
+
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Faq",
+        "settings": [
+          {
+            "type": "text",
+            "id": "faq_head",
+            "label": "Heading"
+          },
+            
+		  {
+            "type": "textarea",
+            "id": "faq_content",
+            "label": "Content"
+          }
+          
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "Faq",
+      "category": "Image",
+      "settings": {
+       
+      },
+      "blocks": [
+        {
+          "type": "image"
+        }
+      ]
+    }]
+  }
+{% endschema %}

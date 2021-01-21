@@ -1,0 +1,93 @@
+<div class="full the_contant_page">
+
+<div class="full free_heading faqq_heading">
+  <div class="container">
+    <h1>{{ settings.cotnet_head }}</h1>
+    <span>{{ settings.contet_sub_had }}</span>
+  
+  </div>
+
+</div>
+
+
+
+ <div class="cont_container">
+      <div class="full map_google">
+      {{ settings.map_iframe }}
+      </div>
+
+      <div class="contact-form form-vertical">
+        {%- assign formId = 'ContactForm' -%}
+        {% form 'contact', id: formId %}
+          {% include 'form-status', form: form, form_id: formId %}
+
+          <div class="grid grid--half-gutters">
+            <div class="grid__item medium-up--one-half">
+             
+              <input type="text" placeholder="Name*" id="{{ formId }}-name" name="contact[name]" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+            </div>
+            <div class="grid__item medium-up--one-half">
+             
+              <input
+                type="email"
+                     placeholder="Email"
+                id="{{ formId }}-email"
+                name="contact[email]"
+                autocorrect="off"
+                autocapitalize="off"
+                value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                aria-required="true"
+                {%- if form.errors contains 'email' -%}
+                  class="input--error"
+                  aria-invalid="true"
+                  aria-describedby="{{ formId }}-email-error"
+                {%- endif -%}
+                >
+              {%- if form.errors contains 'email' -%}
+                <span id="{{ formId}}-email-error" class="input-error-message">
+                  <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+                  {% include 'icon-error' %}
+                  <span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+                </span>
+              {%- endif -%}
+            </div>
+          </div>
+
+        
+          <input type="tel"  placeholder="Phone Number" id="{{ formId }}-phone" name="contact[phone]" pattern="[0-9\-]*" value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+
+          
+          <textarea placeholder="Message" rows="10" id="{{ formId }}-message" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+
+          <input type="submit" class="btn" value="{{ settings.contact_button_text }} ">
+
+        {% endform %}
+      </div>
+    </div>
+
+<style>
+
+.free_heading h1 {
+    color:{{ settings.faq_heading_color }};
+}
+  .free_heading span {
+    color: {{ settings.faq_heading_sub_color }};
+  }
+  
+  .contact-form input[type="submit"] {
+  
+    color: {{ settings.contact_button_text_color }};
+    background-color: {{ settings.contact_button_bg_color }};
+    
+  }
+  
+  .contact-form input[type="submit"]:hover {
+  
+    color: {{ settings.contact_button_text_color_hover }};
+    background-color: {{ settings.contact_button_bg_color_hover }};
+    
+  }
+  
+
+  
+</style>

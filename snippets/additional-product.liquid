@@ -1,0 +1,39 @@
+<div class="additional_wrapper">
+   {% if settings.enable_image %}
+     <div class="image_wrapper">
+       {% assign image1_url = settings.image1 %}
+       {% assign image2_url = settings.image2 %}
+       {% if image1_url != blank %}
+         <div class="image_1">
+           {% if settings.enable_change_image1 %}
+             {% assign image1_width = settings.image1_width %}
+           {% else %}
+             {% assign image1_width = "unset" %}
+           {% endif %}
+            <img src="{{ image1_url | img_url : '500x' }}" style="width: {{ image1_width }}px;">
+         </div>
+       {% endif %}
+       {% if image2_url != blank %}
+         <div class="image_2">
+           {% if settings.enable_change_image2 %}
+             {% assign image2_width = settings.image2_width %}
+           {% else %}
+             {% assign image2_width = "unset" %}
+           {% endif %}
+            <img src="{{ image2_url | img_url : '500x' }}" style="width: {{ image2_width }}px;">
+         </div>
+       {% endif %}
+     </div>
+   {% endif %}
+   {% if settings.enable_text %}
+     <div class="text_wrapper" style="background-color: {{ settings.description_background_color }};">
+       {{ settings.description_text }}
+       {% style %}
+         .additional_wrapper .text_wrapper p{
+           color: {{ settings.font_color }};
+         }
+       {% endstyle %}
+     </div>
+   {% endif %}
+   
+ </div>

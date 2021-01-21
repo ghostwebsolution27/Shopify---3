@@ -1,0 +1,41 @@
+ <div class="full p_price">
+         
+         <span>  {% include 'product-price', variant: current_variant, show_vendor: section.settings.show_vendor %}</span>
+          {% unless product.compare_at_price == blank %}
+         <span class="save_date">You save {{ product.compare_at_price | minus: product.price |money}}
+({{ product.compare_at_price_max | minus:product.price | times:100 | divided_by:product.compare_at_price_max }}%)</span>     
+{% endunless %}   
+         
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Product Price",
+    "settings": [
+{
+        "type": "color",
+        "id": "product_sale_price_color",
+        "label": "Sale Price Color"
+      },
+      {
+        "type": "color",
+        "id": "product_regular_price_color",
+        "label": "Regular Price Color"
+      },
+      {
+        "type": "color",
+        "id": "save_text_color",
+        "label": "Save Text Color"
+      }
+
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

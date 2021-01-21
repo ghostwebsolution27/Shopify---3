@@ -1,0 +1,202 @@
+<div id="" class="full my_varaints">
+{% unless product.options.size == 1 and product.variants[0].title == 'Default Title' %}
+              {% for option in product.options_with_values %}
+                <div class="selector-wrapper js product-form__item">
+                  <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">
+                    {{ option.name }}
+                  </label>
+                  <div>
+                    
+                    {% for value in option.values %}
+                      {% if option.name contains "Color" %}
+                        {% for variant in product.variants %}
+                          {%- assign display = "block" -%}
+                          {% if variant.image and variant.title contains value%}
+                            {%- assign img = variant.image | img_url: "large" -%}
+                            {%- assign display = "none" -%}
+                          {% endif %}
+                        {% endfor %}
+                      	<span onclick="colorSwatchHandler('{{value}}');" style="background-color:{{value}};width:40px;height:40px;display:inline-block;background-position:center;" class="color-swatch my_color_swatches" title="{{value}}"></span>
+                      {% endif %}
+                    {% endfor %}
+                    
+                       {% for value in option.values %}
+                      {% if option.name contains "Size" %}
+                        {% for variant in product.variants %}
+                          {%- assign display = "block" -%}
+                          {% if variant.image and variant.title contains value%}
+                            {%- assign img = variant.image | img_url: "large" -%}
+                            {%- assign display = "none" -%}
+                          {% endif %}
+                        {% endfor %}
+                      	<span onclick="colorSwatchHandler('{{value}}');" style="background-color:{{value}};width:40px;height:40px;display:inline-block;background-position:center;" class="color-swatch boxes_swtic" title="{{value}}">{{value}}</span>
+                      {% endif %}
+                    {% endfor %}
+                    
+                  </div>
+                  <select style="display:{{display}}" class="single-option-selector single-option-selector-{{ section.id }} product-form__input" id="SingleOptionSelector-{{ forloop.index0 }}" data-index="option{{ forloop.index }}">
+                    {% for value in option.values %}
+                    	<option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+              {% endfor %}
+            {% endunless %}
+			<script>
+              function colorSwatchHandler(color) {
+                var colorOptionElm = document.querySelector('select option[value="' + color + '"]'),
+                    colorSpanElm = document.querySelector('span[title="' + color + '"]'),
+                    activeSwatch = document.querySelector('.color-swatch.active'),
+                    change = new Event('change', {bubbles: true, cancelable: false});
+                if (activeSwatch) {
+                  activeSwatch.className = activeSwatch.className.replace(' active', '');
+                }
+                colorOptionElm.selected = "selected";
+                colorSpanElm.className += ' active';
+                colorOptionElm.parentElement.dispatchEvent(change);
+              }
+        	</script>
+            <select name="id" id="ProductSelect" data-section="{{ section.id }}" class="product-form__variants no-js" style="display:none;">
+  {% for variant in product.variants %}
+    {% if variant.available %}
+      <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">
+        {{ variant.title }}
+      </option>
+    {% else %}
+      <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+    {% endif %}
+  {% endfor %}
+</select>
+       </div>
+
+
+
+ <script>
+       $(document).ready(function() {
+   $('.single-option-selector').on(
+       'change',
+       function() {
+           var selectedValues = $.map(
+               $('.single-option-selector'),
+               function(element) {
+                   var $element = $(element);
+                   var type = $element.attr('type');
+                   var currentOption = {};
+
+                   if (type === 'radio' || type === 'checkbox') {
+                       if ($element[0].checked) {
+                           currentOption.value = $element.val();
+                           currentOption.index = $element.data('index');
+
+                           return currentOption;
+                       } else {
+                           return false;
+                       }
+                   } else {
+                       currentOption.value = $element.val();
+                       currentOption.index = $element.data('index');
+
+                       return currentOption;
+                   }
+               }
+           );
+           var product = JSON.parse(
+               document.getElementById('ProductJson').innerHTML
+           );
+           var variant = product.variants.filter(function(v) {
+               var condition = selectedValues.every(function(values) {
+                   return v[values.index] == values.value;
+               });
+               return condition;
+           });
+           if (variant != null && variant.length == 1) {
+               $('#ProductSelect').val(variant[0].id);
+           }
+           else {
+            //disable add to cart button
+           }
+       }
+   );
+});
+       </script>
+
+
+{% schema %}
+  {
+    "name": "Products Variants",
+    "max_blocks": 200,
+    "settings": [
+
+	
+
+      {  
+         "type":"text",
+         "id":"var_heading",
+         "label":"Heading"
+      }
+
+
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Products Variants",
+        "settings": [
+           {
+            "type": "text",
+            "id": "varitants_text",
+            "label": "Color Name"
+          },
+          {
+            "type": "color",
+            "id": "varitants_color",
+            "label": "Varitant Color"
+          },
+            
+		  {
+            "type": "image_picker",
+            "id": "varitants_image",
+            "label": "Varitant Image",
+            "info": "Image Size 50x50"
+          }
+          
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "Variant",
+      "category": "Image",
+      "settings": {
+       
+      },
+      "blocks": [
+        {
+          "type": "image"
+        }
+      ]
+    }]
+  }
+{% endschema %}
+
+
+
+
+
+
+{% for block in section.blocks %}  
+
+<style>
+   {%- if block.settings.varitants_color -%}
+  .{{ block.settings.varitants_text }} {background-color:{{ block.settings.varitants_color }} !important;}
+  {%- endif -%}
+  
+   {%- if block.settings.varitants_image -%}
+  .{{ block.settings.varitants_text }} { background:url('{{ block.settings.varitants_image | img_url: 'original' }}');  }
+  {%- endif -%}
+  
+  
+</style>
+
+
+{% endfor %}
+       

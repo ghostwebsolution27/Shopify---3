@@ -1,0 +1,144 @@
+{% if section.blocks.size > 0 %}
+<div class="full we_loved_section">
+  <div class="container">
+    <h1>{{ section.settings.testi_heading }}</h1>
+    <p>{{ section.settings.testi_conet_text }}</p>
+    <section class="center slider">
+    
+      
+      {% for block in section.blocks %}
+      
+    
+      <div>
+        <div class="full love_imge">
+          <div class="col-xs-4"> <img src="{{ block.settings.testi_img1 | img_url: 'original' }}" alt="{{ block.settings.testi_h1 }}" /> </div>
+          <div class="col-xs-8">
+            <h3> {{ block.settings.testi_h1 }}</h3>
+            <ul>
+            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+            </ul>
+          </div>
+        </div>
+        <div class="full love_text">
+          <h2>{{ block.settings.testi_h1_sub }}</h2>
+          <p>{{ block.settings.testi_c1 }}</p>
+        </div>
+      </div>
+      
+      
+         {% endfor %}
+      
+      
+      
+    </section>
+  
+  </div>
+</div>
+
+
+<style>
+  .we_loved_section {background:{{ section.settings.testi_bng_color }};}
+  .we_loved_section h1 {color:{{ section.settings.testi_heading_color }};}
+  .we_loved_section p {color:{{ section.settings.testi_conet_text_color }};}
+
+</style>
+
+{% endif %}
+
+
+{% schema %}
+  {
+    "name": "Testimonials",
+    "max_blocks": 200,
+    "settings": [
+
+
+      {  
+         "type":"color",
+         "id":"testi_bng_color",
+         "label":"Background Color"
+      },
+      {  
+         "type":"text",
+         "id":"testi_heading",
+         "label":"Heading"
+      },
+
+      {  
+         "type":"color",
+         "id":"testi_heading_color",
+         "label":"Heading Color"
+      },
+     {  
+         "type":"textarea",
+         "id":"testi_conet_text",
+         "label":"Content"
+      },
+
+
+      {  
+         "type":"color",
+         "id":"testi_conet_text_color",
+         "label":"Content Color"
+      },
+
+      {  
+         "type":"text",
+         "id":"testi_button",
+         "label":"Button Text"
+      },
+
+      {  
+         "type":"url",
+         "id":"testi_button_url",
+         "label":"Button Url"
+      }
+
+      
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Testimonial",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "testi_img1",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "testi_h1",
+            "label": "Heading"
+          },
+		  {
+            "type": "text",
+            "id": "testi_h1_sub",
+            "label": "Sub Heading"
+          },
+         {
+            "type": "textarea",
+            "id": "testi_c1",
+            "label": "Content"
+          }
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "Testimonials",
+      "category": "Image",
+      "settings": {
+       
+      },
+      "blocks": [
+        {
+          "type": "image"
+        }
+      ]
+    }]
+  }
+{% endschema %}

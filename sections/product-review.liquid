@@ -1,0 +1,30 @@
+ {% if settings.product_review_app %}
+       <div class="full product_review_p">
+       <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+       </div>
+        {% endif %}
+       {% if settings.product_reviify_app %}
+       <div class="full product_review_p">
+       <div id="shop_booster_rate_6" product-id="{{ product.id }}"></div>
+       </div>
+       {% endif %}
+
+{% schema %}
+  {
+    "name": "Product Review",
+    "settings": [
+{
+        "type": "color",
+        "id": "top_star_colur",
+        "label": "Star Colour"
+      }
+
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,1363 @@
+{
+  "current": {
+    "main_logo": "shopify:\/\/shop_images\/ALIGNIN-01.jpg",
+    "main_favcon": "shopify:\/\/shop_images\/0x0_6cf6fd6e-0676-4301-ad66-35652e0ce76e.png",
+    "quick_button_text_color": "",
+    "quick_button_bg_color": "",
+    "quick_button_border_color": "",
+    "quick_button_text_colo_hover": "",
+    "quick_button_bg_color_hover": "",
+    "quick_button_border_color_hover": "",
+    "menu_sticky_enable": true,
+    "menu_line_enable": true,
+    "menu_line_color": "#f19caf",
+    "home_featured_elble": true,
+    "home_featured_product": "demo-product",
+    "anouncebar_text_head": "🚚   Standard Delivery in 5-7 days from our USA warehouse.<p><\/p>",
+    "anouncebar_text_color": "#ffffff",
+    "anouncebar_bg_color": "#f19caf",
+    "enable_sticky_cartPage": true,
+    "stciky_addto_text_cart": "GET MINE NOW",
+    "stciky_addto_text_cart_url": "https:\/\/power-knee-demo.myshopify.com\/",
+    "stciky_addto_text_color_cart": "",
+    "stciky_addto_textbg_color_cart": "",
+    "stciky_addto_text__border_color_cart": "#ffffff",
+    "stciky_addto_bg_color_hover_cart": "#ffffff",
+    "stciky_addto_text_color_hover_cart": "#f19caf",
+    "stciky_addto_text__border_color_hover_cart": "#ffffff",
+    "fontsize_desktop_titles_account": "12",
+    "keep_fnot_mobile_title": false,
+    "fontsize_desktop_titles_accoun_mobile": "10",
+    "bag_picker": "shopify:\/\/shop_images\/Gels_-_New_and_Improved_53dd697a-dfe7-4b5d-b072-a802422f6e4b.png",
+    "slider_thumbanail_border": true,
+    "slider_thumbanail_border_color": "#eb8ca1",
+    "sticky_enable": true,
+    "product_title_color": "#2f2f2f",
+    "top_star_colur": "",
+    "product_color_h1": "",
+    "product_color_h2": "",
+    "product_color_h3": "",
+    "product_color_h4": "",
+    "product_color_h5": "",
+    "product_color_h6": "",
+    "product_sale_price_color": "#ea839a",
+    "product_regular_price_color": "#2e3133",
+    "save_text_color": "",
+    "enable_image": true,
+    "image1": "shopify:\/\/shop_images\/Screenshot_1.png",
+    "enable_change_image1": true,
+    "image1_width": 120,
+    "image2": "shopify:\/\/shop_images\/Screenshot_1_1.png",
+    "enable_change_image2": true,
+    "image2_width": 200,
+    "enable_text": true,
+    "description_text": "<p>Our Theeth Whitening Kit has been designed to deliver results in 6 days. It is formulated with a peroxide-free active whitening ingredient that whitens and birghtens your teeth without any pain or sensitivity<\/p>",
+    "description_background_color": "#fafafa",
+    "description_title_size": 40,
+    "font_color": "#242729",
+    "enable_quantity": true,
+    "add_to_cart_text": "Add To Cart",
+    "add_to_cart_text_color": "",
+    "add_to_cart_button_bg": "#f19daf",
+    "add_to_cart_text_color_on_hover": "",
+    "add_to_cart_text_color_bg_hover": "#eb8ca1",
+    "trust_banner": "shopify:\/\/shop_images\/trust11-01.png",
+    "enable_autoplay": true,
+    "enable_sticky": false,
+    "enable_delivery": true,
+    "del_bg_color": "",
+    "enable_ship_head": true,
+    "develry_heading": "FREE WORLDWIDE DELIVERY",
+    "develry_heading_color": "#37d67a",
+    "enable_sub_head": true,
+    "deliver_content": "⚡<b> 100% MONEY BACK GUARANTEE<\/b>",
+    "ship_conent_color": "#df8587",
+    "enable_stock": true,
+    "stock_heading_before": "There are",
+    "stock_heading_after": "products left in stock.",
+    "enable_vistor": true,
+    "watcking_emoji": "⏰",
+    "watcking_number": "221",
+    "watcking_text_after": "people viewed this product in the last 24 hours.",
+    "desp_headin_clr": "#df8587",
+    "desp_headin_clr_main": "#4a4a4a",
+    "desp_headin_bold": "#4a4a4a",
+    "desp_headin_tick": "#df8587",
+    "enable_faq_garantee_box": true,
+    "granyee_box_color": "#feffea",
+    "granyee_image": "shopify:\/\/shop_images\/Money-Back-Guaranteed.png",
+    "granyee_heading": "100% MONEY BACK GUARANTEE",
+    "granyee_content": "We're proud to offer a risk-free 30 day money-back guarantee on the SunnySkin™ Tightening Wand. Not happy? No problem! Just follow our money-back guarantee protocol to receive a full refund.",
+    "granyee_heading_color": "#2f2f2f",
+    "granyee_content_color": "",
+    "enable_faq_product_page": true,
+    "faq_heading_product_bg": "#fafafa",
+    "faq_heading_color_product": "#2e3133",
+    "faq_heading_sub_color_product": "#4a4a4a",
+    "faq_hbox_color": "#ffffff",
+    "bg_color_active": "#f19daf",
+    "bg_color_active_color": "",
+    "read_rece_text": "More FAQs",
+    "read_rece_text_link": "",
+    "read_rece_text_color": "#ea839a",
+    "read_rece_border_color": "#ea839a",
+    "read_rece_bg_color": "",
+    "read_rece_text_color_hover": "",
+    "read_rece_bg_color_hover": "#ea839a",
+    "read_rece_border_color_hover": "#ea839a",
+    "enable_sticky_cart": true,
+    "stciky_addto_text": "ADD TO CART",
+    "stciky_addto_text_color": "#ffffff",
+    "stciky_addto_textbg_color": "",
+    "stciky_addto_text__border_color": "#ffffff",
+    "stciky_addto_bg_color_hover": "#ffffff",
+    "stciky_addto_text_color_hover": "#f19daf",
+    "stciky_addto_text__border_color_hover": "#ffffff",
+    "stciky_addto_text_color_mobile": "",
+    "stciky_addto_textbg_color_mobile": "",
+    "stciky_addto_bg_color_hover_mobile": "",
+    "stciky_addto_text_color_hover_mobile": "",
+    "product_reviify_app": true,
+    "fy_heading_color": "",
+    "fy_star_color": "",
+    "fy_star_color_active": "",
+    "fy_star_button_text_color": "",
+    "fy_star_button_color": "",
+    "fy_star_button_text_color_hover": "",
+    "fy_star_button_color_hover": "",
+    "product_review_app": false,
+    "rev_stars_color": "#ffa500",
+    "rev_main_color": "#4a4a4a",
+    "button_text_color_review": "",
+    "button_bg_color_review": "",
+    "button_text_color_review_hover": "",
+    "button_bg_color_review_hover": "",
+    "enalble_refify_banner": true,
+    "revire_bnanner_text": "Reviews",
+    "revire_bnanner_text_color": "",
+    "revire_bnanner_bg_color": "",
+    "revire_bnanner_text_color_hover": "",
+    "revire_bnanner_bg_color_hover": "",
+    "header_cart_color": "#f19daf",
+    "header_cart_text_color": "",
+    "coun_down_bg_cart": "#e9e9e9",
+    "coun_down_text_color_cart": "#000000",
+    "coun_down_date_color_cart": "#e03e3e",
+    "product_title_colllor": "",
+    "variants_price_cart": "",
+    "enable_shop_banner_geading": true,
+    "shop_banner_color": "",
+    "shop_banner_text": "<b>You Have Qualified For Free Shipping!<\/b>",
+    "shop_banner_color_text": "",
+    "shop_banner_color_border": "#d3f7c9",
+    "enable_usulaay_price": true,
+    "right_heading_one": "Usually:",
+    "right_heading_one_color": "",
+    "right_heading_one_price_color": "",
+    "enable_srtike_though_one": true,
+    "right_heading_two": "Today:",
+    "right_heading_one_two": "#4a4a4a",
+    "right_heading_two_price_color": "",
+    "enable_free_ship_cart": true,
+    "chekout_shiping_after": "Shipping:",
+    "chekout_shiping_after_color": "",
+    "chekout_text_after_free": "FREE",
+    "chekout_shiping_after_3_color": "",
+    "chekout_cart_after": "CHECKOUT NOW",
+    "enable_lock_cart_sub_geading": true,
+    "chekout_cart_after_subhaeding": "90 Day Money Back Guarantee",
+    "cart_sub_heaing_color_button": "",
+    "cart_sub_heaing_color_button_on_hover": "",
+    "enable_lock_cart": true,
+    "chekout_cart_color_bg": "#f19caf",
+    "chekout_cart_color_bg_hover": "#ff6a8b",
+    "chekout_cart_color_text": "#ffffff",
+    "chekout_cart_color_hover": "#ffffff",
+    "chekout_payent_icons": "shopify:\/\/shop_images\/payments.png",
+    "chekout_countinew": "Continue Shopping",
+    "chekout_countinew_color": "",
+    "bacg_color": "#ea839a",
+    "support_text_color": "",
+    "support_textare_color": "",
+    "suport_image": "shopify:\/\/shop_images\/support.png",
+    "support_text": "Customer Support",
+    "support_textare": "A <b>dedicated support team <\/b>to answer all your questions.",
+    "suport_image_1": "",
+    "support_text_1": "100% secure payment",
+    "support_textare_1": "We use <b>encrypted SSL security<\/b> to ensure that your credit card information is <b>100% protected.<\/b>",
+    "suport_image_2": "",
+    "support_text_2": "Fast Delivery",
+    "support_textare_2": "Your order will be <b>delivered free to your home <\/b>with a unique tracking number.",
+    "testi_bng_color": "",
+    "testi_heading": "Feel the Love...",
+    "testi_heading_color": "",
+    "testi_conet_text": "Read about the difference our product has made in the lives of real customers...",
+    "testi_conet_text_color": "",
+    "slide_fist_headin_color": "",
+    "slide_star_color": "",
+    "slide_second_headin_color": "",
+    "slide_content_color": "",
+    "testi_img1_1": "",
+    "testi_h1_1": "Sarah A.",
+    "testi_h1_sub_1": "Fantastic customer service!",
+    "testi_c1_1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    "testi_img1_2": "",
+    "testi_h1_2": "Amit S.",
+    "testi_h1_sub_2": "I use this product every day!",
+    "testi_c1_2": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    "testi_img1_3": "",
+    "testi_h1_3": "Becca M.",
+    "testi_h1_sub_3": "Best decision I have ever made!",
+    "testi_c1_3": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    "testi_img1_4": "",
+    "testi_h1_4": "Richard G.",
+    "testi_h1_sub_4": "This product saved my life!",
+    "testi_c1_4": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    "testi_img1_5": "",
+    "testi_h1_5": "Michael M.",
+    "testi_h1_sub_5": "Would be lost without this product!",
+    "testi_c1_5": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    "love_button_text": "More Testimonials",
+    "love_button_Link": "https:\/\/power-knee-demo.myshopify.com\/#reviews",
+    "love_button_text_color": "",
+    "love_button_bg_color": "",
+    "love_button_border_color": "",
+    "love_button_text_color_hover": "",
+    "love_button_bg_color_hover": "",
+    "love_button_border_color_hover": "",
+    "page_bg_color": "",
+    "form_bg_color": "",
+    "form_border_color": "#e4e8eb",
+    "track_heading": "Track my Order",
+    "track_heading_color": "",
+    "track_sub_heading": "Paste your unique tracking code sent to you via email below to track your parcel...",
+    "track_sub_heading_color": "",
+    "track_button_color": "",
+    "track_button_color_bg": "#f19daf",
+    "track_button_color_hover": "",
+    "track_button_color_bg_hover": "#ea839a",
+    "shiping_text_sub_heading": "If you have any questions, please don't hesitate to contact our team.",
+    "shipping_box_elble": true,
+    "shipping_box_bg_color": "",
+    "shipping_box_border_color": "#e3f2f5",
+    "shipping_box_text_color": "",
+    "shipping_box_link_color": "#637ef8",
+    "shipuig_box_image": "shopify:\/\/shop_images\/box-ship.png",
+    "shiping_text_box": "<span><b>Want To Track A Package? <\/b>Enter your order number (Sent via email) through<\/span>",
+    "shiping_text_box_link": "our online tracking system",
+    "shiping_text_box_link_url": "shopify:\/\/pages\/order-tracking-form",
+    "shipping_content_color": "",
+    "shipping_bold_text_color": "",
+    "shipping_bold_text_link_color": "#637ef8",
+    "cotnet_head": "Help Center",
+    "faq_heading_color": "",
+    "contet_sub_had": "If you have any questions, please don't hesitate to contact our team. <br> <b>Customer service hours:<\/b> Monday - Friday (9am - 5pm PST)",
+    "faq_heading_sub_color": "",
+    "map_iframe": "<iframe src=\"https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d317715.71193692513!2d-0.38178583985784054!3d51.528735196048615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C%20UK!5e0!3m2!1sen!2s!4v1575061693786!5m2!1sen!2s\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\"><\/iframe>",
+    "contact_button_text": "Submit",
+    "contact_button_text_color": "#ffffff",
+    "contact_button_bg_color": "#f19caf",
+    "contact_button_text_color_hover": "#ffffff",
+    "contact_button_bg_color_hover": "#ea839a",
+    "footer_bg_color": "#ffffff",
+    "footer_headings_color": "#2b3644",
+    "footer_links_color": "#767d89",
+    "footer_links_color_hover": "",
+    "footer_logo": "shopify:\/\/shop_images\/ezgif.com-webp-to-png_41.png",
+    "footer_logo_content": "",
+    "footer_onne_heading": "About",
+    "footer_onne_linklist": "main-footer",
+    "footer_two_heading": "Store Info",
+    "footer_two_linklist": "legal",
+    "footer_fouth_heading": "Customer Service Hours",
+    "footer_fouth_last": "test",
+    "copy_heading": "© 2019 Your Brand",
+    "copy_heading_color": "#3d4246",
+    "copy_heading_image": "",
+    "type_header_font": "avenir_next_rounded_n4",
+    "type_header_base_size": 26,
+    "type_base_font": "avenir_next_rounded_n4",
+    "type_base_size": 16,
+    "type_bold_product_titles": true,
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/jnddsfd-01.png",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#ea839a",
+    "checkout_error_color": "#e32c2b",
+    "enable_side_baner_button": true,
+    "love_bnanner_text": "Feel The Love",
+    "love_bnanner_url": "#love",
+    "love_bnanner_text_color": "",
+    "love_bnanner_bg_color": "",
+    "love_bnanner_text_color_hover": "",
+    "love_bnanner_bg_color_hover": "",
+    "sticky_title_color": "",
+    "stciky_addto_bg_color": "#f19daf",
+    "product_price_colllor": "",
+    "enable_srtike_though_two": false,
+    "cart_bold_colllor": "",
+    "cart_thinn_colllor": "#000000",
+    "right_heading_three": "Shipping",
+    "enable_other_sections": false,
+    "hubsopt_code": "",
+    "color_text": "#3d4246",
+    "color_body_text": "#69727b",
+    "color_sale_text": "#557b97",
+    "color_button": "#557b97",
+    "color_button_text": "#fff",
+    "color_small_button_text_border": "#3d4246",
+    "color_text_field_text": "#000",
+    "color_text_field_border": "#949494",
+    "color_text_field": "#fff",
+    "color_image_overlay_text": "#fff",
+    "color_image_overlay": "#3d4246",
+    "image_overlay_opacity": "40",
+    "color_borders": "#e8e9eb",
+    "color_body_bg": "#fff",
+    "share_image": "",
+    "share_facebook": "true",
+    "share_twitter": "true",
+    "share_pinterest": "true",
+    "social_twitter_link": "",
+    "social_facebook_link": "",
+    "social_pinterest_link": "",
+    "social_instagram_link": "",
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "favicon": "",
+    "enable_ajax": "true",
+    "shiping_text_box_link-url": "",
+    "margin_top_page_product": "",
+    "margin_bottom_product": "",
+    "enable_count_down": true,
+    "coun_down_bg": "",
+    "coun_down_text": "<b>48 Hour Sales Ends In:<\/b>",
+    "coun_down_text_color": "",
+    "date_time": "12\/6\/2019 1:05 PM",
+    "coun_down_date_color": "",
+    "page_margin_top": "",
+    "page_margin_bottom": "",
+    "page_font_siz": "",
+    "page_font_siz_heading_h2": "",
+    "page_font_siz_color_h2": "",
+    "page_font_siz_heading_h3": "",
+    "page_font_siz_color_h3": "",
+    "page_font_siz_content": "",
+    "page_font_siz_content_color": "",
+    "page_font_siz_bold_color": "",
+    "margin_top_page_contact": "80",
+    "margin_bottom_page_contact": "100",
+    "margin_top_page_track": "80",
+    "margin_bottom_page_track": "100",
+    "icone_ship_1": "",
+    "ship_headin_1": "Free Shipping",
+    "ship_sub_1": "Lorem Ipsum is simply dummy",
+    "icone_ship_2": "",
+    "ship_headin_2": "99% Satisified Customers",
+    "ship_sub_2": "Lorem Ipsum is simply dummy",
+    "icone_ship_3": "",
+    "ship_headin_3": "Originality Guaranteed",
+    "ship_sub_3": "Lorem Ipsum is simply dummy",
+    "ship_headin_color": "",
+    "ship_sub_headin_color": "",
+    "review_star_color": "",
+    "homepage_elable": false,
+    "select_prodcut": "",
+    "enable_count_down_cart": true,
+    "coun_down_text_cart": "Lorem Ipsum is simply dummy",
+    "date_time_cart": "11\/21\/2020 1:05 AM",
+    "coun_down_text_cart_after": "hits zero to get 10% off",
+    "track_button": "Track Order",
+    "footer_heading": "Elite E-commerce",
+    "footer_fb": "#",
+    "footer_insta": "#",
+    "footer_youtube": "#",
+    "footer_copy": "Copyright © 2019 Elite Light, Inc. All Rights Reserved.",
+    "footer_contt": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "align_logo": "left",
+          "logo": "",
+          "logo_max_width": 100,
+          "main_linklist": "main-menu",
+          "message": false,
+          "home_page_only": true,
+          "message_text": "Announce something here",
+          "message_link": "",
+          "color_bg": "#7796a8",
+          "color_text": "#fff"
+        }
+      },
+      "hero": {
+        "type": "hero",
+        "settings": {
+          "image": "",
+          "alignment": "center",
+          "hero_layout": "full_width",
+          "hero_size": "medium",
+          "text_size": "large",
+          "title": "Image with text overlay",
+          "text": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.<\/p>",
+          "button_label": "",
+          "button_link": ""
+        }
+      },
+      "slideshow": {
+        "type": "slideshow",
+        "blocks": {
+          "slideshow-0": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "alignment": "center center",
+              "slide_title": "Image slide",
+              "subheading": "Tell your brand's story through images",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "slideshow-1": {
+            "type": "image",
+            "settings": {
+              "image": "",
+              "alignment": "center center",
+              "slide_title": "Image slide",
+              "subheading": "Tell your brand's story through images",
+              "button_label": "",
+              "button_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "slideshow-0",
+          "slideshow-1"
+        ],
+        "settings": {
+          "slideshow_height": "adapt",
+          "text_size": "medium",
+          "text_alignment": "center center",
+          "show_overlay": true,
+          "autorotate": false,
+          "autorotate_speed": 5
+        }
+      },
+      "featured-collections": {
+        "type": "collection",
+        "settings": {
+          "title": "Featured collection",
+          "collection": "frontpage",
+          "grid": 3,
+          "rows": 2,
+          "show_vendor": false,
+          "show_view_all": false
+        }
+      },
+      "feature-row": {
+        "type": "feature-row",
+        "settings": {
+          "image": "",
+          "layout": "left",
+          "title": "Image with text",
+          "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+          "button_label": "",
+          "button_link": ""
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "link_list": {
+            "type": "link_list",
+            "settings": {
+              "title": "Quick links",
+              "menu": "footer"
+            }
+          },
+          "text": {
+            "type": "text",
+            "settings": {
+              "title": "Talk about your business",
+              "text": "<p>Share store details, promotions, or brand content with your customers.<\/p>"
+            }
+          },
+          "newsletter": {
+            "type": "newsletter",
+            "settings": {
+              "title": "Newsletter"
+            }
+          }
+        },
+        "block_order": [
+          "link_list",
+          "text",
+          "newsletter"
+        ],
+        "settings": {
+          "show_payment_icons": false,
+          "color_footer_bg": "#f5f5f5",
+          "color_footer_text": "#3d4246"
+        }
+      },
+      "home-top-slider": {
+        "type": "home-top-slider",
+        "blocks": {
+          "1574795875165": {
+            "type": "image",
+            "settings": {
+              "testi_img1": "",
+              "testi_h1": "Amazing Headline Goes Here...",
+              "heading_colour": "#ffffff",
+              "slide_button_text": "Shop Now",
+              "button_color_text": "#f0c3c3",
+              "button_icon_color": "#000000",
+              "button_bg_color": "#ffffff",
+              "button_colorhover": "",
+              "button_bg_colorhover": "#ff0000",
+              "slide_button_url": "#"
+            }
+          }
+        },
+        "block_order": [
+          "1574795875165"
+        ],
+        "settings": {
+          "carousel_title_heading": "Slider"
+        }
+      },
+      "home-product-slider": {
+        "type": "home-product-slider",
+        "settings": {
+          "colect_title": "Selected just for you",
+          "colect_title_color": "",
+          "colect_button": "Show More",
+          "colect_button_url": "#",
+          "collection": ""
+        }
+      },
+      "support-payment": {
+        "type": "support-payment",
+        "blocks": {
+          "1574806949178": {
+            "type": "image",
+            "settings": {
+              "suport_image": "",
+              "support_text": "SUPPORT FRANÇAIS",
+              "support_text_color": "",
+              "support_textare": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+              "support_textare_color": ""
+            }
+          },
+          "1574806997470": {
+            "type": "image",
+            "settings": {
+              "suport_image": "",
+              "support_text": "PAIEMENT 100% SÉCURISÉ",
+              "support_text_color": "#ffffff",
+              "support_textare": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+              "support_textare_color": "#ffffff"
+            }
+          },
+          "1574807033961": {
+            "type": "image",
+            "settings": {
+              "suport_image": "",
+              "support_text": "LIVRAISON SUIVIE",
+              "support_text_color": "",
+              "support_textare": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+              "support_textare_color": ""
+            }
+          }
+        },
+        "block_order": [
+          "1574806949178",
+          "1574806997470",
+          "1574807033961"
+        ],
+        "settings": {
+          "bacg_color": "#e7a87f"
+        }
+      },
+      "testimonials": {
+        "type": "testimonials",
+        "blocks": {
+          "1574808235327": {
+            "type": "image",
+            "settings": {
+              "testi_img1": "",
+              "testi_h1": "Jordan K.",
+              "testi_h1_sub": "The best one by far!",
+              "testi_c1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            }
+          },
+          "1574808569266": {
+            "type": "image",
+            "settings": {
+              "testi_img1": "",
+              "testi_h1": "Jordan K.",
+              "testi_h1_sub": "The best one by far!",
+              "testi_c1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            }
+          },
+          "1574808605202": {
+            "type": "image",
+            "settings": {
+              "testi_img1": "",
+              "testi_h1": "Jordan K.",
+              "testi_h1_sub": "The best one by far!",
+              "testi_c1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            }
+          },
+          "1574808630141": {
+            "type": "image",
+            "settings": {
+              "testi_img1": "",
+              "testi_h1": "Jordan K.",
+              "testi_h1_sub": "The best one by far!",
+              "testi_c1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            }
+          },
+          "1574808650279": {
+            "type": "image",
+            "settings": {
+              "testi_img1": "",
+              "testi_h1": "Jordan K.",
+              "testi_h1_sub": "The best one by far!",
+              "testi_c1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            }
+          },
+          "1574808667995": {
+            "type": "image",
+            "settings": {
+              "testi_img1": "",
+              "testi_h1": "Jordan K.",
+              "testi_h1_sub": "The best one by far!",
+              "testi_c1": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+            }
+          }
+        },
+        "block_order": [
+          "1574808235327",
+          "1574808569266",
+          "1574808605202",
+          "1574808630141",
+          "1574808650279",
+          "1574808667995"
+        ],
+        "settings": {
+          "testi_bng_color": "",
+          "testi_heading": "Feel the Love...",
+          "testi_heading_color": "",
+          "testi_conet_text": "Read about the difference light therapy has made in the lives of real customers.*",
+          "testi_conet_text_color": "",
+          "testi_button": "Read More Reviews",
+          "testi_button_url": "#"
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "settings": {
+          "image_size": "medium",
+          "show_quantity_selector": true,
+          "show_variant_labels": true,
+          "show_vendor": false,
+          "enable_zoom": true,
+          "enable_payment_button": true,
+          "show_share_buttons": false
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_product_recommendations": true,
+          "heading": "You may also like",
+          "show_vendor": false
+        }
+      },
+      "our-product": {
+        "type": "our-product",
+        "settings": {}
+      },
+      "faq": {
+        "type": "faq",
+        "blocks": {
+          "1575058566689": {
+            "type": "image",
+            "settings": {
+              "faq_head": "What's Your Returns Policy?",
+              "faq_content": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
+            }
+          },
+          "1575058546877": {
+            "type": "image",
+            "settings": {
+              "faq_head": "How Long Does Shipping Take?",
+              "faq_content": "t is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here"
+            }
+          },
+          "1575695915316": {
+            "type": "image",
+            "settings": {
+              "faq_head": "Do You Ship Internationally?",
+              "faq_content": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable."
+            }
+          }
+        },
+        "block_order": [
+          "1575058566689",
+          "1575058546877",
+          "1575695915316"
+        ],
+        "settings": {
+          "faq_heading": "Frequently Asked Questions",
+          "faq_heading_color": "",
+          "faq_heading_sub": "If you have any questions, please don't hesitate to contact our team.",
+          "faq_heading_sub_color": "#4a4a4a",
+          "faq_hbox_color": "",
+          "bg_color_active": "#f19daf",
+          "bg_color_active_color": "",
+          "read_rece_text": "Read More Reviews",
+          "read_rece_text_link": "shopify:\/\/pages\/faq",
+          "read_rece_text_color": "#f19daf",
+          "read_rece_border_color": "#f19daf",
+          "read_rece_bg_color": "",
+          "read_rece_text_color_hover": "",
+          "read_rece_bg_color_hover": "#f19daf",
+          "read_rece_border_color_hover": "#f19daf"
+        }
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "cart_ajax_enable": true,
+          "cart_notes_enable": false
+        }
+      },
+      "product-template-index": {
+        "type": "product-template-index",
+        "settings": {
+          "home_featured_elble": false,
+          "home_featured_product": ""
+        }
+      },
+      "my-cart": {
+        "type": "my-cart",
+        "settings": {
+          "cart_ajax_enable": true,
+          "cart_notes_enable": false
+        }
+      },
+      "variants": {
+        "type": "variants",
+        "blocks": {
+          "1582061673647": {
+            "type": "image",
+            "settings": {
+              "varitants_text": "Yellow",
+              "varitants_color": "#ccbe00",
+              "varitants_image": ""
+            }
+          },
+          "1582061842804": {
+            "type": "image",
+            "settings": {
+              "varitants_text": "Pink",
+              "varitants_color": "",
+              "varitants_image": "shopify:\/\/shop_images\/light-color.png"
+            }
+          }
+        },
+        "block_order": [
+          "1582061673647",
+          "1582061842804"
+        ],
+        "settings": {
+          "var_heading": ""
+        }
+      },
+      "product-title": {
+        "type": "product-title",
+        "settings": {
+          "product_title_color": ""
+        }
+      },
+      "home-pages": {
+        "type": "home-pages",
+        "blocks": {
+          "1583141300053": {
+            "type": "menu",
+            "settings": {
+              "content_block_name": "this is test",
+              "show_content_title": "All_Devices",
+              "margin_top_title": 37,
+              "margin_top_title1": "-50",
+              "margin_bottom_title": 10,
+              "margin_bottom_title1": "",
+              "side_dekrop_mobile_title": 0,
+              "side_dekrop_mobile_title1": "80",
+              "side_margin_mobie_title": false,
+              "Cautm_side_mobile_title": "50",
+              "block_hwhole_title": "none",
+              "product_titlee_color": "#eb8ca1",
+              "fontsize_desktop_titles": "24",
+              "fontsize_desktop_title1": "",
+              "keep_fnot_mobile_title": true,
+              "fontsize_mobile_titles": "28",
+              "fontsize_mobile_title1": "",
+              "line_height_titles": "1.4",
+              "block_alignment_title": "left",
+              "background_title_color": "#e9e9e9",
+              "border_enble_title": true,
+              "border_title_color": "#d20000",
+              "Border_thickness_title": 5,
+              "side_border_title": "side_border",
+              "border_type_title": "dashed",
+              "Border_top_radious_titles": "5",
+              "Border_bottom_radious_titles": "5",
+              "padding_top_title": 25,
+              "padding_top_title1": "",
+              "padding_bottom_title": 25,
+              "padding_bottom_title1": "",
+              "padding_left_title": 25,
+              "padding_left_title1": "",
+              "padding_right_title": 25,
+              "padding_right_title1": ""
+            }
+          },
+          "1582197091050": {
+            "type": "page",
+            "settings": {
+              "show_content_star": "All_Devices",
+              "margin_top_star": 1,
+              "margin_top_star1": "",
+              "margin_bottom_star": 1,
+              "margin_bottom_star1": "",
+              "margin_left_star": 1,
+              "margin_left_star1": "",
+              "margin_right_star": 1,
+              "product_star_color": "",
+              "fontsize_desktop_stars": "10",
+              "fontsize_desktop_star1": "",
+              "keep_fnot_mobile_star": false,
+              "fontsize_mobile_stars": "10",
+              "fontsize_mobile_star1": "",
+              "background_star_color": "",
+              "border_enble_star": false,
+              "border_star_color": "",
+              "Border_thickness_star": 1,
+              "Border_thickness_stars1": "",
+              "Border_top_radious_stars": "10",
+              "Border_top_radious_star1": "",
+              "Border_bottom_radious_stars": "10",
+              "Border_bottom_radious_star1": "",
+              "padding_top_star": 1,
+              "padding_top_star1": "",
+              "padding_bottom_star": 1,
+              "padding_bottom_star1": "",
+              "padding_left_star": 1,
+              "padding_left_star1": "",
+              "padding_right_star": 1,
+              "padding_right_star1": ""
+            }
+          },
+          "1582227763684": {
+            "type": "recently_viewed",
+            "settings": {
+              "product_sale_price_color": "",
+              "product_regular_price_color": "",
+              "save_text_color": ""
+            }
+          },
+          "1582670791856": {
+            "type": "filter_by_collection",
+            "settings": {}
+          },
+          "1582231587925": {
+            "type": "filter_by_tag",
+            "settings": {}
+          },
+          "1582237362638": {
+            "type": "filter_by_type",
+            "settings": {
+              "add_to_cart_text": "",
+              "add_to_cart_text_color": "",
+              "add_to_cart_button_bg": "",
+              "add_to_cart_text_color_on_hover": "",
+              "add_to_cart_text_color_bg_hover": ""
+            }
+          },
+          "1582328752005": {
+            "type": "badge_menu",
+            "settings": {
+              "trust_banner": "shopify:\/\/shop_images\/trust11-01.png"
+            }
+          },
+          "1582238700282": {
+            "type": "filter_by_vendor",
+            "settings": {}
+          },
+          "1582671193011": {
+            "type": "product_description",
+            "settings": {}
+          },
+          "1582672345973": {
+            "type": "grantee_box",
+            "settings": {
+              "granyee_box_color": "",
+              "granyee_image": "shopify:\/\/shop_images\/Money-Back-Guaranteed.png",
+              "granyee_heading": "100% MONEY BACK GUARANTEE",
+              "granyee_content": "We're proud to offer a risk-free 30 day money-back guarantee on the SunnySkin™ Tightening Wand. Not happy? No problem! Just follow our money-back guarantee protocol to receive a full refund.",
+              "granyee_heading_color": "",
+              "granyee_content_color": ""
+            }
+          }
+        },
+        "block_order": [
+          "1583141300053",
+          "1582197091050",
+          "1582227763684",
+          "1582670791856",
+          "1582231587925",
+          "1582237362638",
+          "1582328752005",
+          "1582238700282",
+          "1582671193011",
+          "1582672345973"
+        ],
+        "settings": {
+          "toggle": false
+        }
+      },
+      "core-sale-page": {
+        "type": "core-sale-page",
+        "blocks": {
+          "1582669411813": {
+            "type": "menu",
+            "settings": {
+              "product_title_color": ""
+            }
+          },
+          "1582669416878": {
+            "type": "page",
+            "settings": {
+              "top_star_colur": ""
+            }
+          },
+          "1582669423308": {
+            "type": "recently_viewed",
+            "settings": {
+              "product_sale_price_color": "",
+              "product_regular_price_color": "",
+              "save_text_color": ""
+            }
+          },
+          "1582669445159": {
+            "type": "filter_by_tag",
+            "settings": {}
+          },
+          "1582669456092": {
+            "type": "filter_by_type",
+            "settings": {
+              "add_to_cart_text": "",
+              "add_to_cart_text_color": "",
+              "add_to_cart_button_bg": "",
+              "add_to_cart_text_color_on_hover": "",
+              "add_to_cart_text_color_bg_hover": ""
+            }
+          },
+          "1582669470363": {
+            "type": "badge_menu",
+            "settings": {
+              "trust_banner": ""
+            }
+          }
+        },
+        "block_order": [
+          "1582669411813",
+          "1582669416878",
+          "1582669423308",
+          "1582669445159",
+          "1582669456092",
+          "1582669470363"
+        ],
+        "settings": {
+          "toggle": false
+        }
+      },
+      "list-collections-template": {
+        "type": "list-collections-template",
+        "settings": {
+          "display_type": "all",
+          "sort": "alphabetical",
+          "grid": 3
+        }
+      },
+      "blog-template": {
+        "type": "blog-template",
+        "settings": {
+          "layout": "list",
+          "blog_show_author": true,
+          "blog_show_date": true
+        }
+      }
+    },
+    "content_for_index": [
+      "hero",
+      "featured-collections",
+      "feature-row",
+      "slideshow"
+    ]
+  },
+  "presets": {
+    "Default": {
+      "color_text": "#3d4246",
+      "color_body_text": "#69727b",
+      "color_sale_text": "#557B97",
+      "color_borders": "#e8e9eb",
+      "color_button": "#557B97",
+      "color_button_text": "#fff",
+      "color_small_button_text_border": "#3d4246",
+      "color_text_field": "#fff",
+      "color_text_field_text": "#000",
+      "color_text_field_border": "#949494",
+      "color_image_overlay_text": "#fff",
+      "color_image_overlay": "#3d4246",
+      "image_overlay_opacity": 40,
+      "color_body_bg": "#fff",
+      "type_header_font": "work_sans_n6",
+      "type_header_base_size": 26,
+      "type_base_font": "work_sans_n4",
+      "type_base_size": 16,
+      "type_bold_product_titles": false,
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {}
+        },
+        "hero": {
+          "type": "hero",
+          "settings": {
+            "text_size": "large"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "image",
+              "settings": {}
+            },
+            "slideshow-1": {
+              "type": "image",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "slideshow-1"
+          ],
+          "settings": {}
+        },
+        "featured-collections": {
+          "type": "collection",
+          "settings": {
+            "collection": "frontpage"
+          }
+        },
+        "feature-row": {
+          "type": "feature-row",
+          "settings": {}
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "link_list": {
+              "type": "link_list",
+              "settings": {}
+            },
+            "text": {
+              "type": "text",
+              "settings": {}
+            },
+            "newsletter": {
+              "type": "newsletter",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "link_list",
+            "text",
+            "newsletter"
+          ],
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "hero",
+        "featured-collections",
+        "feature-row",
+        "slideshow"
+      ]
+    },
+    "Light": {
+      "color_text": "#162950",
+      "color_body_text": "#6d6d6d",
+      "color_sale_text": "#DA2F0C",
+      "color_borders": "#e4e4e4",
+      "color_button": "#DA2F0C",
+      "color_button_text": "#ffffff",
+      "color_small_button_text_border": "#162950",
+      "color_text_field": "#ffffff",
+      "color_text_field_text": "#162950",
+      "color_text_field_border": "#909090",
+      "color_image_overlay_text": "#ffffff",
+      "color_image_overlay": "#3d3d3d",
+      "image_overlay_opacity": 40,
+      "color_body_bg": "#f8f8f8",
+      "type_header_font": "muli_n6",
+      "type_header_base_size": 26,
+      "type_base_font": "muli_n4",
+      "type_base_size": 18,
+      "type_bold_product_titles": true,
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "social_twitter_link": "",
+      "social_facebook_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_tumblr_link": "",
+      "social_snapchat_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": "",
+      "favicon": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "small",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#e8f3f6",
+      "checkout_heading_font": "Roboto",
+      "checkout_body_font": "Source Sans Pro",
+      "checkout_accent_color": "#1990c6",
+      "checkout_button_color": "#23314e",
+      "checkout_error_color": "#ff6d6d",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "align_logo": "left",
+            "logo": "",
+            "logo_max_width": 135,
+            "main_linklist": "main-menu",
+            "message": true,
+            "color_bg": "#162950",
+            "color_text": "#ffffff"
+          }
+        },
+        "hero": {
+          "type": "hero",
+          "settings": {
+            "alignment": "center",
+            "hero_size": "x-large",
+            "text_size": "large"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "alignment": "center center"
+              }
+            },
+            "1492095993817": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "alignment": "center"
+              }
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "1492095993817"
+          ],
+          "settings": {
+            "slideshow_height": "medium",
+            "text_size": "medium",
+            "autorotate": false,
+            "autorotate_speed": 5
+          }
+        },
+        "featured-collections": {
+          "type": "collection",
+          "settings": {
+            "grid": 3,
+            "rows": 1,
+            "show_vendor": true,
+            "show_view_all": true
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "image_size": "medium",
+            "show_quantity_selector": false,
+            "show_variant_labels": true,
+            "show_vendor": false,
+            "enable_zoom": true,
+            "show_share_buttons": true
+          }
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "layout": "grid",
+            "grid": 2,
+            "rows": 2,
+            "show_collection_image": true,
+            "show_vendor": false,
+            "sort_enable": true,
+            "tags_enable": true
+          }
+        },
+        "1492033809691": {
+          "type": "map",
+          "settings": {}
+        },
+        "1492033877875": {
+          "type": "quotes",
+          "blocks": {
+            "1492033877875-0": {
+              "type": "quote",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "1492033877875-0"
+          ],
+          "settings": {}
+        },
+        "1492033924902": {
+          "type": "custom-content",
+          "blocks": {
+            "1492033924902-0": {
+              "type": "text",
+              "settings": {
+                "width": "100%",
+                "alignment": "center",
+                "align_text": "center"
+              }
+            }
+          },
+          "block_order": [
+            "1492033924902-0"
+          ],
+          "settings": {
+            "title": ""
+          }
+        },
+        "1492096252560": {
+          "type": "collection-list",
+          "blocks": {
+            "1492096252560-0": {
+              "type": "featured_collection",
+              "settings": {}
+            },
+            "1492096252560-1": {
+              "type": "featured_collection",
+              "settings": {}
+            },
+            "1492096252560-2": {
+              "type": "featured_collection",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "1492096252560-0",
+            "1492096252560-1",
+            "1492096252560-2"
+          ],
+          "settings": {
+            "grid": 3
+          }
+        },
+        "blog-template": {
+          "type": "blog-template",
+          "settings": {
+            "layout": "grid",
+            "blog_show_author": true,
+            "blog_show_date": false
+          }
+        },
+        "article-template": {
+          "type": "article-template",
+          "settings": {
+            "blog_show_author": true,
+            "blog_show_date": true,
+            "show_share_buttons": true
+          }
+        },
+        "cart-template": {
+          "type": "cart-template",
+          "settings": {
+            "cart_notes_enable": false
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "link_list": {
+              "type": "link_list",
+              "settings": {}
+            },
+            "text": {
+              "type": "text",
+              "settings": {}
+            },
+            "newsletter": {
+              "type": "newsletter",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "link_list",
+            "text",
+            "newsletter"
+          ],
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "hero",
+        "featured-collections",
+        "slideshow",
+        "1492033924902",
+        "1492096252560",
+        "1492033877875",
+        "1492033809691"
+      ]
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{% if section.blocks.size > 0 %}
+<div class="full three_widget">
+  <div class="container">
+    
+        {% for block in section.blocks %}
+    
+    <div class="col-sm-4"> <img src="{{ block.settings.suport_image | img_url: 'original' }}" alt="" />
+      <h2>{{ block.settings.support_text }}</h2>
+      <p>{{ block.settings.support_textare }}</p>
+    </div>
+   
+    <style>
+      .three_widget h2 {color:{{ block.settings.support_text_color }};}
+      .three_widget p {color:{{ block.settings.support_textare_color }};}
+    </style>
+    
+      {% endfor %}
+    
+    <style>
+      
+      .three_widget {
+    background: {{ section.settings.bacg_color }};
+      }
+    </style>
+    
+    
+  </div>
+</div>
+
+{% endif %}
+{% schema %}
+  {
+    "name": "Support and Payment",
+    "max_blocks": 3,
+    "settings": [
+
+        {
+            "type": "color",
+            "id": "bacg_color",
+            "label": "Backgroung Color"
+          }
+      
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Section",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "suport_image",
+            "label": "Image"
+          },
+          
+         {
+            "type": "text",
+            "id": "support_text",
+            "label": "Heading"
+          },
+
+         {
+            "type": "color",
+            "id": "support_text_color",
+            "label": "Heading Color"
+          },
+
+          {
+            "type": "textarea",
+            "id": "support_textare",
+            "label": "Content"
+          },
+         {
+            "type": "color",
+            "id": "support_textare_color",
+            "label": "Content color"
+          } 
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "Support and Payment",
+      "category": "Image",
+      "settings": {
+       
+      },
+      "blocks": [
+        {
+          "type": "image"
+        }
+      ]
+    }]
+  }
+{% endschema %}

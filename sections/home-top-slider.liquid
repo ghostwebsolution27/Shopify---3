@@ -1,0 +1,178 @@
+{% if section.blocks.size > 0 %}
+<div class="full home_banner">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel"> 
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+     
+      {% for block in section.blocks %}
+      <div class="item">
+        <div style="background:url('{{ block.settings.testi_img1 | img_url: 'original' }}') center no-repeat; background-size:cover; background-position:center center;" class="slide_bg">
+          <div class="container">
+            <div class="col-sm-6">
+              <h1>{{ block.settings.testi_h1 }}</h1>
+              <a class="shop_n" href="{{ block.settings.slide_button_url }}"><i class="fa fa-arrow-right" aria-hidden="true"></i> {{ block.settings.slide_button_text }}</a> </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      <style>
+  .home_banner h1 {color:{{ block.settings.heading_colour }}};
+  .home_banner a.shop_n {color:{{ block.settings.button_color_text }}}
+  .home_banner a.shop_n i {
+  
+    background: {{ block.settings.button_bg_color }};
+    color: {{ block.settings.button_icon_color }};
+    
+  }
+        
+        .home_banner a.shop_n:hover i {
+    background: {{ block.settings.button_bg_colorhover }};
+    color: {{ block.settings.button_colorhover }};
+}
+
+</style>
+      
+      
+      {% endfor %}
+    
+    </div>
+    
+    <script>
+      $(document).ready(function(){
+        $('.home_banner .item:first').addClass("active");
+      
+      })
+      
+    </script>
+    
+    <!-- Left and right controls -->
+    <div class="col-sm-9 no-padding">
+      <div class="full shipping_section">
+        <div class="container">
+          <div class="col-sm-1"> </div>
+          <div class="shiping_bg">
+            <div class="col-sm-3 ship_panel">
+              <div class="col-sm-4"> <img src="{{ settings.icone_ship_1 | img_url: 'original' }}" alt="{{ settings.ship_headin_1 }}" /> </div>
+              <div class="col-sm-8 no-padding">
+                <h3>{{ settings.ship_headin_1 }}</h3>
+                <span>{{ settings.ship_sub_1 }}</span> </div>
+            </div>
+            <div class="col-sm-3 ship_panel">
+              <div class="col-sm-4"> <img src="{{ settings.icone_ship_2 | img_url: 'original' }}" alt="{{ settings.ship_headin_2 }}" /> </div>
+              <div class="col-sm-8 no-padding">
+                <h3>{{ settings.ship_headin_2 }}</h3>
+                <span>{{ settings.ship_sub_2 }}</span> </div>
+            </div>
+            <div class="col-sm-3 ship_panel">
+              <div class="col-sm-4"> <img src="{{ settings.icone_ship_3 | img_url: 'original' }}" alt="{{ settings.ship_headin_3 }}" /> </div>
+              <div class="col-sm-8 no-padding">
+                <h3>{{ settings.ship_headin_3 }}</h3>
+                <span>{{ settings.ship_sub_3 }}</span> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3"> <a class="left crousel_arrow" href="#myCarousel" data-slide="prev"> <i class="fa fa-arrow-left" aria-hidden="true"></i> </a> <a class="right crousel_arrow" href="#myCarousel" data-slide="next"> <i class="fa fa-arrow-right" aria-hidden="true"></i> </a> </div>
+  </div>
+</div>
+{% endif %}
+
+
+
+<style>
+  .ship_panel h3 {color:{{ settings.ship_headin_color }};}
+  .ship_panel span {color:{{ settings.ship_sub_headin_color }};}
+
+</style>
+
+
+
+
+{% schema %}
+  {
+    "name": "Slideshow",
+    "max_blocks": 200,
+    "settings": [
+      {  
+         "type":"text",
+         "id":"carousel_title_heading",
+         "label":"Heading"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "testi_img1",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "testi_h1",
+            "label": "Heading"
+          },
+
+            { "type": "color",
+            "id": "heading_colour",
+            "label": "Heading Color"
+          },
+		  {
+            "type": "text",
+            "id": "slide_button_text",
+            "label": "Button Text"
+          },
+
+          { "type": "color",
+            "id": "button_color_text",
+            "label": "Button Text Color"
+          },
+          
+          { "type": "color",
+            "id": "button_icon_color",
+            "label": "Button Icon Color"
+          },
+           { "type": "color",
+            "id": "button_bg_color",
+            "label": "Button Bg Color"
+          },
+           
+{ "type": "color",
+            "id": "button_colorhover",
+            "label": "Button Hover Color"
+          },
+
+          
+          { "type": "color",
+            "id": "button_bg_colorhover",
+            "label": "Button Bg hover Color"
+          },
+
+
+         {
+            "type": "url",
+            "id": "slide_button_url",
+            "label": "Button Url"
+          }
+        ]
+      }
+    ],
+    "presets": [{
+      "name": "Slideshow",
+      "category": "Image",
+      "settings": {
+        
+      },
+      "blocks": [
+        {
+          "type": "image"
+        }
+      ]
+    }]
+  }
+{% endschema %}

@@ -1,0 +1,78 @@
+{% comment %}
+  The contents of the cart.liquid template can be found in /sections/cart-template.liquid
+{% endcomment %}
+
+<div class="full cart_main_page">
+
+{% section 'cart-template' %}
+</div>
+
+
+<script>
+CountDownTimer('{{ settings.date_time_cart }}', 'countdown');
+function CountDownTimer(dt, id)
+{
+    var end = new Date(dt);
+    
+    var _second = 1000;
+    var _minute = _second * 60;
+    var _hour = _minute * 60;
+    var _day = _hour * 24;
+    var timer;
+    
+    function showRemaining() {
+        var now = new Date();
+        var distance = end - now;
+        if (distance < 0) {
+            
+            clearInterval(timer);
+            document.getElementById(id).innerHTML = 'EXPIRED!';
+            
+            return;
+        }
+        var days = Math.floor(distance / _day);
+        var hours = Math.floor((distance % _day) / _hour);
+        var minutes = Math.floor((distance % _hour) / _minute);
+        var seconds = Math.floor((distance % _minute) / _second);
+        
+        
+        if (String(hours).length < 2){
+            hours = 0 + String(hours);
+        }
+        if (String(minutes).length < 2){
+            minutes = 0 + String(minutes);
+        }
+        if (String(seconds).length < 2){
+            seconds = 0 + String(seconds);
+        }
+        
+        
+        var datestr = days + ' days ' + 
+                      hours + ' hrs ' + 
+                      minutes + ' mins ' + 
+                      seconds + ' secs';
+        
+        document.getElementById(id).innerHTML = datestr;
+    }
+    
+    timer = setInterval(showRemaining, 1000);
+}
+
+
+</script>
+
+<style>
+ .cart_coun_down {background:{{ settings.coun_down_bg_cart }};}
+  .cart_coun_down p {color:{{ settings.coun_down_text_color_cart }};}
+  .cart_coun_down #countdown {color:{{ settings.coun_down_date_color_cart }};}
+  
+  
+  
+  .cart_main_page .cart__submit-controls input.cart__submit {background: {{ settings.chekout_cart_color_bg }};
+    color: {{ settings.chekout_cart_color_text }};}
+.cart_main_page .cart__submit-controls input.cart__submit:hover {background: {{ settings.chekout_cart_color_hover }};
+    color: {{ settings.chekout_cart_color_bg_hover }};}
+  
+
+</style>
+

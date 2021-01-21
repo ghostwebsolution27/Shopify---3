@@ -1,0 +1,60 @@
+{% comment %}
+	GEMPAGE BUILDER (https://apps.shopify.com/gempage)
+
+	You SHOULD NOT modify source code in this page because
+	It is automatically generated from GEMPAGE BUILDER
+	Try to edit page with the live editor.
+{% endcomment %}
+
+{%- if settings.home_featured_elble -%}
+{% include 'product-template-index' %}
+
+{%- endif -%}
+
+
+{%- if settings.enable_other_sections -%}
+
+
+
+
+
+{% section 'home-top-slider' %}
+
+
+<!--/Header-End-->
+
+    
+    
+{% section 'home-product-slider' %}
+{%- endif -%}
+
+
+
+
+
+
+<script>
+
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:20,
+	nav:true,
+	dots: false,
+    responsiveClass:true,
+    responsive:{
+        0:{
+            items:1,
+       
+        },
+        600:{
+            items:3,
+         
+        },
+        1000:{
+            items:4,
+    
+       
+        }
+    }
+})
+</script> 

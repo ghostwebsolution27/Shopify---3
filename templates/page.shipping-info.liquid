@@ -1,0 +1,54 @@
+<div class="full page_margin_sect">
+
+<div class="full free_heading faqq_heading mewfree_heading">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    
+    <span>{{ settings.shiping_text_sub_heading }}</span>
+  </div>
+
+</div>
+  
+  <div class="full shipping_info_page">
+<div class="cont_container">
+  
+  
+   {%- if settings.shipping_box_elble -%}
+  <div class="full pack_order">
+  <div class="full shop_order">
+    <p class="box_orders_page" style="background:url('{{ settings.shipuig_box_image | img_url: 'original' }}') left center no-repeat">{{ settings.shiping_text_box }}
+      <a href="{{ settings.shiping_text_box_link_url }}">{{ settings.shiping_text_box_link }}</a>
+    </p>
+  </div>
+  </div>
+  {%- endif -%}
+  
+  
+  <div class="full shiping_page_content">
+     {{ page.content }}
+    
+  </div>
+  
+  
+  
+  </div>
+  </div>
+
+</div>
+
+
+<style>
+.shop_order {
+    background: {{ settings.shipping_box_bg_color }};
+    border: 2px solid {{ settings.shipping_box_border_color }};
+}
+  .shop_order .box_orders_page { color:{{ settings.shipping_box_text_color }}; }
+  
+  
+  .shop_order .box_orders_page a { color:{{ settings.shipping_box_link_color }};}
+  
+  
+  .shiping_page_content strong, .shiping_page_content strong {color:{{ settings.shipping_bold_text_color }};}
+  .shiping_page_content p {color:{{ settings.shipping_content_color }};}
+  .shiping_page_content a {color:{{ settings.shipping_bold_text_link_color }};}
+</style>

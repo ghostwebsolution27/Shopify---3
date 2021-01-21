@@ -1,0 +1,303 @@
+{% if settings.menu_sticky_enable %}
+  <div class="full to_maring_div"></div>
+  <div class="full fix_header">
+{% else %}
+  <div class="full to_maring_div" style="display: none;"></div>
+  <div class="full fix_header"  style="position: relative !important;">
+{% endif %}
+
+{% assign menu_line_enalble = settings.menu_line_enable %}
+{% assign menu_line_color = settings.menu_line_color %}
+    
+  {% comment %}{{ settings.menu_line_enable }}{% endcomment %}
+<div class="full annousment_bar">
+  <div class="container">
+   
+    <div class="full head_to_cart"><p>{{ settings.anouncebar_text_head }}</p>
+     {%- if settings.enable_sticky_cart -%}
+      <div class="my_bottom_addcart">
+      {% if product.variants.size > 1 %}
+      <a href="#cart_vaule">{{ settings.stciky_addto_text }}</a> 
+ {% else %} 
+ <form method="post" action="/cart/add">
+  <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+  <input type="submit" value="{{ settings.stciky_addto_text }}" class="header_addto_cart" />
+</form>  
+      
+{% endif %}
+        
+    </div>
+        {%- endif -%}
+       {%- if settings.enable_sticky_cartPage -%}
+         <div class="other_pages">
+      <a class="for_cart_page" href="{{ settings.stciky_addto_text_cart_url }}">{{ settings.stciky_addto_text_cart }}</a>
+    </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+<div class="full main_header">
+  <div class="container-header">
+    <div class="col-sm-2 col-xs-4 main_logo">
+      
+      {%- if settings.main_logo -%}  
+      <a href="{{ shop.url }}"><img src="{{ settings.main_logo | img_url: 'original' }}" alt="" /></a>
+      
+      {%- else -%} 
+       <a href="{{ shop.url }}"><img src="https://cdn.shopify.com/s/files/1/0272/3014/2602/files/logo2-01_1024x1024_bb621b9a-05b3-4dd3-a150-d413e79eaee4_1024x1024.png?v=1575873960" alt="" /></a>
+      
+      {%- endif -%} 
+    </div>
+    <div class="col-sm-8 col-xs-4 main_menu">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler my_toglle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <svg class="menu-svg" viewBox="0 0 8.9 6.8" style="enable-background:new 0 0 8.9 6.8;width: 24px;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-linecap:round;stroke-miterlimit:10;}
+</style>
+<line class="st0" x1="0.6" y1="0.5" x2="8.4" y2="0.5"></line>
+<line class="st0 menu-svg__smile-top" x1="0.6" y1="4" x2="6.5" y2="4"></line>
+<path class="st0 menu-svg__smile-bottom" d="M8.4,4.1c-0.4,1.3-2,2.2-3.9,2.2C2.6,6.3,1,5.3,0.6,4"></path>
+</svg> 
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+           {% for link in linklists.main-menu.links %}
+        <li> <a href="{{ link.url }}">{{ link.title }}</a></li>
+{% endfor %}
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="col-sm-2 col-xs-4 top_cart">
+      <ul>
+        <li class="border_icone serch_icone">
+         <form class="searchbox">
+        <input type="search" placeholder="Search" name="search" class="searchbox-input" onkeyup="buttonUp();" required>
+           <button type="submit" class="searchbox-submit"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 37 40"><path d="M35.6 36l-9.8-9.8c4.1-5.4 3.6-13.2-1.3-18.1-5.4-5.4-14.2-5.4-19.7 0-5.4 5.4-5.4 14.2 0 19.7 2.6 2.6 6.1 4.1 9.8 4.1 3 0 5.9-1 8.3-2.8l9.8 9.8c.4.4.9.6 1.4.6s1-.2 1.4-.6c.9-.9.9-2.1.1-2.9zm-20.9-8.2c-2.6 0-5.1-1-7-2.9-3.9-3.9-3.9-10.1 0-14C9.6 9 12.2 8 14.7 8s5.1 1 7 2.9c3.9 3.9 3.9 10.1 0 14-1.9 1.9-4.4 2.9-7 2.9z"></path></svg></button>
+        <span class="searchbox-icon"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 37 40"><path d="M35.6 36l-9.8-9.8c4.1-5.4 3.6-13.2-1.3-18.1-5.4-5.4-14.2-5.4-19.7 0-5.4 5.4-5.4 14.2 0 19.7 2.6 2.6 6.1 4.1 9.8 4.1 3 0 5.9-1 8.3-2.8l9.8 9.8c.4.4.9.6 1.4.6s1-.2 1.4-.6c.9-.9.9-2.1.1-2.9zm-20.9-8.2c-2.6 0-5.1-1-7-2.9-3.9-3.9-3.9-10.1 0-14C9.6 9 12.2 8 14.7 8s5.1 1 7 2.9c3.9 3.9 3.9 10.1 0 14-1.9 1.9-4.4 2.9-7 2.9z"></path></svg></span>
+    </form>
+        </li>
+        <li class="border_icone"><a href="/cart"><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-cart" viewBox="0 0 37 40"><path d="M36.5 34.8L33.3 8h-5.9C26.7 3.9 23 .8 18.5.8S10.3 3.9 9.6 8H3.7L.5 34.8c-.2 1.5.4 2.4.9 3 .5.5 1.4 1.2 3.1 1.2h28c1.3 0 2.4-.4 3.1-1.3.7-.7 1-1.8.9-2.9zm-18-30c2.2 0 4.1 1.4 4.7 3.2h-9.5c.7-1.9 2.6-3.2 4.8-3.2zM4.5 35l2.8-23h2.2v3c0 1.1.9 2 2 2s2-.9 2-2v-3h10v3c0 1.1.9 2 2 2s2-.9 2-2v-3h2.2l2.8 23h-28z"></path></svg>
+          {% unless cart.item_count == 0 %}
+          <span>{{ cart.item_count }}</span>
+          {% endunless %}
+          </a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+{% if settings.enalble_refify_banner %}
+<div class="review_fix_buttin not_for_product"><a href="#love" id="love_button"><i class="fa fa-star" aria-hidden="true"></i>  {{ settings.revire_bnanner_text }}</a></div>
+{% endif %}
+
+<script>
+$(document).ready(function(){
+  $("button.navbar-toggler").click(function(){
+    $("button.navbar-toggler").removeClass("my_toglle");
+  });
+});
+</script>
+
+
+
+
+<script>
+  
+ $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 10) {
+        $(".main_header").addClass("zero_header");
+    } else {
+        $(".main_header").removeClass("zero_header");
+    }
+});
+
+</script>
+
+
+
+  <script>
+  $(document).ready(function(){
+            var submitIcon = $('.searchbox-icon');
+            var inputBox = $('.searchbox-input');
+            var searchBox = $('.searchbox');
+            var isOpen = false;
+            submitIcon.click(function(){
+                if(isOpen == false){
+                    searchBox.addClass('searchbox-open');
+                    inputBox.focus();
+                    isOpen = true;
+                } else {
+                    searchBox.removeClass('searchbox-open');
+                    inputBox.focusout();
+                    isOpen = false;
+                }
+            });  
+             submitIcon.mouseup(function(){
+                    return false;
+                });
+            searchBox.mouseup(function(){
+                    return false;
+                });
+            $(document).mouseup(function(){
+                    if(isOpen == true){
+                        $('.searchbox-icon').css('display','block');
+                        submitIcon.click();
+                    }
+                });
+        });
+            function buttonUp(){
+                var inputVal = $('.searchbox-input').val();
+                inputVal = $.trim(inputVal).length;
+                if( inputVal !== 0){
+                    $('.searchbox-icon').css('display','none');
+                } else {
+                    $('.searchbox-input').val('');
+                    $('.searchbox-icon').css('display','block');
+                }
+            }
+</script>
+
+
+
+<script>
+
+$("#love_button").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#love").offset().top - 100
+    }, 1000);
+});
+</script>
+
+<style>
+  {% if menu_line_enalble %}
+  .navbar .navbar-nav li a:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    -webkit-transform: translateX(-102%);
+    -ms-transform: translateX(-102%);
+    transform: translateX(-102%);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    height: 2px;
+    background: {{ menu_line_color }};
+  }
+  {% endif %}
+  
+  
+  .review_fix_buttin a {background: {{ settings.love_bnanner_bg_color }};
+    color: {{ settings.love_bnanner_text_color }};
+  }
+.review_fix_buttin a:hover { background:{{ settings.love_bnanner_bg_color_hover }}; color:{{ settings.love_bnanner_text_color_hover }};}
+  
+  
+  
+  .annousment_bar { background:{{ settings.anouncebar_bg_color }}; }
+  .annousment_bar p {color: {{ settings.anouncebar_text_color }}; }
+  
+  .top_cart ul li a span {    color: {{ settings.header_cart_text_color }};
+    background: {{ settings.header_cart_color }};}
+  
+  
+  
+  
+  @media only screen and (min-width: 768px) {
+  .head_to_cart .header_addto_cart, .head_to_cart a {background: {{ settings.stciky_addto_textbg_color }};
+    border: 2px solid {{ settings.stciky_addto_text__border_color }};
+    color: {{ settings.stciky_addto_text_color }};
+}
+
+.head_to_cart .header_addto_cart:hover, .head_to_cart a:hover {background: {{ settings.stciky_addto_bg_color_hover }}; color:{{ settings.stciky_addto_text_color_hover }};  border: 2px solid {{ settings.stciky_addto_text__border_color_hover }};}
+  }
+  
+  
+  
+  
+  
+  .other_pages a{background: {{ settings.stciky_addto_textbg_color_cart }};
+    border: 2px solid {{ settings.stciky_addto_text__border_color_cart }};
+    color: {{ settings.stciky_addto_text_color_cart }};
+}
+
+.other_pages a:hover{background: {{ settings.stciky_addto_bg_color_hover_cart }};
+    color: {{ settings.stciky_addto_text_color_hover_cart }};
+    border: 2px solid {{ settings.stciky_addto_text__border_color_hover_cart }};}
+  
+  
+  
+  
+  
+  .head_to_cart .header_addto_cart, .head_to_cart a, .add_to_art button, a.red_rexx, .order_form button[type="submit"], .cart_main_page .cart__submit-controls .cart__submit, .other_pages a, .contact-form input[type="submit"] {
+  
+  background-color:{{ settings.quick_button_bg_color }};
+    color:{{ settings.quick_button_text_color }};
+     border-color:{{ settings.quick_button_border_color }};
+  
+  }
+  
+  
+  
+   .head_to_cart .header_addto_cart:hover, .head_to_cart a:hover, .add_to_art button:hover, a.red_rexx:hover, .order_form button[type="submit"]:hover, .cart_main_page .cart__submit-controls .cart__submit:hover, .other_pages a:hover, .contact-form input[type="submit"]:hover {
+  
+  background-color:{{ settings.quick_button_bg_color_hover }};
+    color:{{ settings.quick_button_text_colo_hover }};
+     border-color:{{ settings.quick_button_border_color_hover }};
+  
+  }
+  
+  
+  
+  
+  .annousment_bar p b, .annousment_bar p strong, .annousment_bar p {
+    font-size: {{ settings.fontsize_desktop_titles_account }}px; }
+  
+  
+  
+  
+  
+ @media only screen and (max-width: 767px) {
+    
+    .head_to_cart .header_addto_cart, .head_to_cart a {
+    background: {{ settings.stciky_addto_textbg_color_mobile }};
+   
+    color: {{ settings.stciky_addto_text_color_mobile }};
+   
+}
+  
+  
+  .head_to_cart .header_addto_cart:hover, .head_to_cart a:hover {
+      background: {{ settings.stciky_addto_bg_color_hover_mobile }};
+    color:{{ settings.stciky_addto_text_color_hover_mobile }};
+  
+  }
+   
+   {% if settings.keep_fnot_mobile_title %}
+    .annousment_bar p b, .annousment_bar p strong, .annousment_bar p {
+    font-size: {{ settings.fontsize_desktop_titles_accoun_mobile }}px; }
+   {% endif %}
+   
+ 
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+</style>

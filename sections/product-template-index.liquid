@@ -1,0 +1,718 @@
+{% if section.settings.home_featured_product == blank %}
+    {% assign product = all_products.first %}
+{% else %}
+    {% assign product = all_products[ section.settings.home_featured_product ] %}
+{% endif %}
+
+<div class="full"
+  id="ProductSection-{{ section.id }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="product"
+  data-enable-history-state="true"
+  data-ajax-enabled="{{ settings.enable_ajax }}"
+>  
+
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+  {%- assign product_image_zoom_size = '1024x1024' -%}
+  {%- assign product_image_scale = '2' -%}
+  {%- assign enable_zoom = section.settings.enable_zoom -%}
+  {%- assign compare_at_price = current_variant.compare_at_price -%}
+  {%- assign price = current_variant.price -%}
+
+
+<div class="full product_main_page">
+  
+  
+  {%- if settings.enable_sticky_cart -%}
+
+<div class="full sticky_add_to_cart">
+  <div class="container">
+ <div class="col-sm-6 left_add_to_cart">
+   <div class="col-xs-2">
+     {% for image in product.images %}
+     <img src="{{  image | img_url: 'original' }}" alt="{{ product.title }}" />
+     {% endfor %}
+   </div>
+   <div class="col-xs-6">
+     <h2>{{ product.title }}</h2>
+     <div class="full product_review_p">
+       <div class="wc_product_review_badge" data-handle="{{ product.handle }}"></div>
+       </div>
+   </div>
+  </div>
+    
+    
+    
+    {% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
+            {% unless product.has_only_default_variant %}
+              <div class="product-form__controls-group">
+                {% for option in product.options_with_values %}
+                  <div class="selector-wrapper js product-form__item">
+                    <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">
+                      {{ option.name }}
+                    </label>
+                    <select class="single-option-selector single-option-selector-{{ section.id }} product-form__input" id="SingleOptionSelector-{{ forloop.index0 }}" data-index="option{{ forloop.index }}">
+                      {% for value in option.values %}
+                        <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endunless %}
+
+            <select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js">
+              {% for variant in product.variants %}
+                {% if variant.available %}
+                  <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">
+                    {{ variant.title }}
+                  </option>
+                {% else %}
+                  <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+                {% endif %}
+              {% endfor %}
+            </select>
+
+            {% if section.settings.show_quantity_selector %}
+              <div class="product-form__controls-group">
+                <div class="product-form__item">
+                  <label for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
+                  <input type="number" id="Quantity-{{ section.id }}"
+                    name="quantity" value="1" min="1" pattern="[0-9]*"
+                    class="product-form__input product-form__input--quantity" data-quantity-input
+                  >
+                </div>
+              </div>
+            {% endif %}
+
+            <div class="product-form__error-message-wrapper product-form__error-message-wrapper--hidden{% if section.settings.enable_payment_button %} product-form__error-message-wrapper--has-payment-button{% endif %}" data-error-message-wrapper role="alert">
+              <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+              {% include 'icon-error' %}
+              <span class="product-form__error-message" data-error-message>{{ 'products.product.quantity_minimum_message' | t }}</span>
+            </div>
+             <div class="col-sm-6 right_add_to_cart">
+               <button type="submit" name="add"
+                  {% unless current_variant.available %} aria-disabled="true"{% endunless %}
+                  aria-label="{{ settings.stciky_addto_text }}"
+                 
+                  data-add-to-cart>
+                  <span data-add-to-cart-text>
+                    {% unless current_variant.available %}
+                      {{ 'products.product.sold_out' | t }}
+                    {% else %}
+                      {{ 'products.product.add_to_cart' | t }}
+                    {% endunless %}
+                  </span>
+                  <span class="hide" data-loader>
+                    {% include 'icon-spinner' %}
+                  </span>
+                </button>
+     {% include 'product-price', variant: current_variant, show_vendor: section.settings.show_vendor %}
+                {% if section.settings.enable_payment_button %}
+                  {{ form | payment_button }}
+                {% endif %}
+              
+            </div>
+          {% endform %}
+  </div>
+</div>
+
+{%- endif -%}
+  
+
+  
+  
+ <div class="full par_main_page"> 
+  <div class="container">
+    <div class="col-sm-6">
+      
+      
+      
+      
+          <div class="col-xs-12">
+            <div id="carousel-main" class="carousel slide " data-ride="carousel" data-interval="5000">
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                   {% for image in product.images %}
+                    <div class="item">
+                        <img src="{{ image | img_url: 'original' }}"  class="img-responsive">
+                    </div>
+                   {% endfor %}
+                    
+                </div>
+
+
+                <!-- Controls -->
+                <a class="left carousel-control" href=".carousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href=".carousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            
+            
+             <div class="full">
+            <div id="carousel-pager" class="carousel slide " data-ride="carousel" data-interval="500000000">
+                <!-- Carousel items -->
+                <div class="carousel-inner vertical">
+                  
+                  
+                  
+                    {% for image in product.images %}
+                  {% assign sham = 1 %}
+                    <div class="item">
+                        <img src="{{ image | img_url: 'original' }}" data-target="#carousel-main"  data-slide-to="{% increment sham %}" class="img-responsive">
+                    </div>
+                
+                  
+                   {% endfor %}
+                    
+                </div>
+                
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-pager" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-pager" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+            
+            
+            
+            
+        </div>
+<script>
+      $(document).ready(function(){
+        $('#carousel-main .item:first').addClass("active");
+         $('#carousel-pager .item:first').addClass("active");
+      
+      })
+      
+    </script>
+       
+    </div>
+    
+     <div class="col-sm-6 product_content_section">
+       <h2 class="p_title full">{{ product.title }}</h2>
+       <div class="full product_review_p">
+       <div class="wc_product_review_badge" data-handle="{{ product.handle }}"></div>
+       </div>
+       <div class="full p_price">
+         <span>  {% include 'product-price', variant: current_variant, show_vendor: section.settings.show_vendor %}</span>
+        
+         <span class="save_date">You save
+( {{ product.compare_at_price_max | minus:product.price | times:100 | divided_by:product.compare_at_price_max }}% )</span>
+       </div>
+       
+        {%- if settings.enable_count_down -%}
+       <div class="full date_time_product">
+         <p>{{ settings.coun_down_text }}</p><div id="countdown"></div>
+       </div>
+       {%- endif -%}
+       
+       
+       
+       
+        {% form 'product', product, class:form_classes, novalidate: 'novalidate', data-product-form: '' %}
+            {% unless product.has_only_default_variant %}
+              <div class="product-form__controls-group">
+                {% for option in product.options_with_values %}
+                  <div class="selector-wrapper js product-form__item">
+                    <label {% if option.name == 'default' %}class="label--hidden" {% endif %}for="SingleOptionSelector-{{ forloop.index0 }}">
+                      {{ option.name }}
+                    </label>
+                    <select class="single-option-selector single-option-selector-{{ section.id }} product-form__input" id="SingleOptionSelector-{{ forloop.index0 }}" data-index="option{{ forloop.index }}">
+                      {% for value in option.values %}
+                        <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value }}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endunless %}
+
+            <select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js">
+              {% for variant in product.variants %}
+                {% if variant.available %}
+                  <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">
+                    {{ variant.title }}
+                  </option>
+                {% else %}
+                  <option disabled="disabled">{{ variant.title }} - {{ 'products.product.sold_out' | t }}</option>
+                {% endif %}
+              {% endfor %}
+            </select>
+
+            {% if section.settings.show_quantity_selector %}
+              <div class="product-form__controls-group">
+                <div class="product-form__item">
+                  <label for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
+                  <input type="number" id="Quantity-{{ section.id }}"
+                    name="quantity" value="1" min="1" pattern="[0-9]*"
+                    class="product-form__input product-form__input--quantity" data-quantity-input
+                  >
+                </div>
+              </div>
+            {% endif %}
+
+            <div class="product-form__error-message-wrapper product-form__error-message-wrapper--hidden{% if section.settings.enable_payment_button %} product-form__error-message-wrapper--has-payment-button{% endif %}" data-error-message-wrapper role="alert">
+              <span class="visually-hidden">{{ 'general.accessibility.error' | t }} </span>
+              {% include 'icon-error' %}
+              <span class="product-form__error-message" data-error-message>{{ 'products.product.quantity_minimum_message' | t }}</span>
+            </div>
+
+             <div class="full add_to_art">
+              
+                <button type="submit" name="add"
+                  {% unless current_variant.available %} aria-disabled="true"{% endunless %}
+                  aria-label="{{ settings.add_to_cart_text }}"
+                 
+                  data-add-to-cart>
+                  <span data-add-to-cart-text>
+                    {% unless current_variant.available %}
+                      {{ 'products.product.sold_out' | t }}
+                    {% else %}
+                      {{ 'products.product.add_to_cart' | t }}
+                    {% endunless %}
+                  </span>
+                  <span class="hide" data-loader>
+                    {% include 'icon-spinner' %}
+                  </span>
+                </button>
+                {% if section.settings.enable_payment_button %}
+                  {{ form | payment_button }}
+                {% endif %}
+              
+            </div>
+          {% endform %}
+       
+       
+       {%- if settings.trust_banner -%}
+       <div class="full truat_badg">
+         <img src="{{ settings.trust_banner | img_url: 'original' }}" alt="" />
+       </div>
+       {%- endif -%}
+       
+       {%- if settings.enable_delivery -%}
+       <div class="full ship_area">
+         
+         {%- if settings.enable_ship_head -%}
+         <h3 class="full">{{ settings.develry_heading }} </h3>
+         {%- endif -%}
+         {%- if settings.enable_sub_head -%}
+         <span class="full">{{ settings.deliver_content }}</span>
+         {%- endif -%}
+         
+         
+         
+         {% assign total=0 %}
+{%for variant in product.variants %}
+{% capture i %}{{ total | plus:variant.inventory_quantity }}{%endcapture%}
+{% assign total = i %}
+{%endfor%}
+         
+         {%- if settings.enable_stock -%}
+         <h5 class="full">There are <strong>{{ total }} </strong> products in stock. </h5>
+         {%- endif -%}
+         {%- if settings.enable_vistor -%}
+         <p class="full count_er"> ⏰ <strong><font id="show">4</font></strong> people are currently watching this product! </p>
+          {%- endif -%}
+       </div>
+        {%- endif -%}
+       
+<script>
+    $(document).ready(
+            function() {
+                setInterval(function() {
+                    var randomnumber = Math.floor(Math.random() * 220);
+                    $('#show').text(
+                            ''
+                                    + randomnumber);
+                }, 20000);
+            });
+</script>
+       <div class="full product_new_desp">
+         {{ product.description }}
+       </div>
+       
+      
+       
+    </div>
+    
+  </div>
+  
+  </div>
+  
+  
+  </div>
+  
+
+  
+</div>
+
+
+  <div class="container">
+ <div class="full product-review_app">
+<div id="wc_review_section" class="wc_review_main_content" data-url="{{ shop.url }}" data-handle="{{ product.handle }}" data-limit="0"></div>
+</div>
+</div>
+
+
+
+ {%- if settings.enable_count_down -%}
+       <div class="full date_time_product new_timer">
+         <p>{{ settings.coun_down_text }}</p><div id="countdown1"></div>
+       </div>
+       {%- endif -%}
+
+
+
+<script>
+CountDownTimer('{{ settings.date_time }}', 'countdown');
+function CountDownTimer(dt, id)
+{
+    var end = new Date(dt);
+    
+    var _second = 1000;
+    var _minute = _second * 60;
+    var _hour = _minute * 60;
+    var _day = _hour * 24;
+    var timer;
+    
+    function showRemaining() {
+        var now = new Date();
+        var distance = end - now;
+        if (distance < 0) {
+            
+            clearInterval(timer);
+            document.getElementById(id).innerHTML = 'EXPIRED!';
+            
+            return;
+        }
+        var days = Math.floor(distance / _day);
+        var hours = Math.floor((distance % _day) / _hour);
+        var minutes = Math.floor((distance % _hour) / _minute);
+        var seconds = Math.floor((distance % _minute) / _second);
+        
+        
+        if (String(hours).length < 2){
+            hours = 0 + String(hours);
+        }
+        if (String(minutes).length < 2){
+            minutes = 0 + String(minutes);
+        }
+        if (String(seconds).length < 2){
+            seconds = 0 + String(seconds);
+        }
+        
+        
+        var datestr = days + ' days ' + 
+                      hours + ' hrs ' + 
+                      minutes + ' mins ' + 
+                      seconds + ' secs';
+        
+        document.getElementById(id).innerHTML = datestr;
+    }
+    
+    timer = setInterval(showRemaining, 1000);
+}
+
+
+</script>
+
+
+<script>
+CountDownTimer('{{ settings.date_time }}', 'countdown1');
+function CountDownTimer(dt, id)
+{
+    var end = new Date(dt);
+    
+    var _second = 1000;
+    var _minute = _second * 60;
+    var _hour = _minute * 60;
+    var _day = _hour * 24;
+    var timer;
+    
+    function showRemaining() {
+        var now = new Date();
+        var distance = end - now;
+        if (distance < 0) {
+            
+            clearInterval(timer);
+            document.getElementById(id).innerHTML = 'EXPIRED!';
+            
+            return;
+        }
+        var days = Math.floor(distance / _day);
+        var hours = Math.floor((distance % _day) / _hour);
+        var minutes = Math.floor((distance % _hour) / _minute);
+        var seconds = Math.floor((distance % _minute) / _second);
+        
+        
+        if (String(hours).length < 2){
+            hours = 0 + String(hours);
+        }
+        if (String(minutes).length < 2){
+            minutes = 0 + String(minutes);
+        }
+        if (String(seconds).length < 2){
+            seconds = 0 + String(seconds);
+        }
+        
+        
+        var datestr = days + ' days ' + 
+                      hours + ' hrs ' + 
+                      minutes + ' mins ' + 
+                      seconds + ' secs';
+        
+        document.getElementById(id).innerHTML = datestr;
+    }
+    
+    timer = setInterval(showRemaining, 1000);
+}
+
+
+</script>
+
+
+<script>
+  
+  
+  $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 50) {
+        $(".sticky_add_to_cart").addClass("open_sticky");
+    } else {
+        $(".sticky_add_to_cart").removeClass("open_sticky");
+    }
+});
+  
+ 
+    
+  $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 100) {
+        $(".new_timer").addClass("open_timer");
+    } else {
+        $(".new_timer").removeClass("open_timer");
+    }
+});
+  
+  
+$('.carousel .vertical .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+  
+  for (var i=1;i<2;i++) {
+    next=next.next();
+    if (!next.length) {
+    	next = $(this).siblings(':first');
+  	}
+    
+    next.children(':first-child').clone().appendTo($(this));
+  }
+});
+</script>
+
+<style>
+  
+  
+
+
+  
+  
+    .product_content_section {
+    margin-top: {{ settings.margin_top_page_product }}px;
+    margin-bottom: {{ settings.margin_bottom_product }}px;
+}
+  .product_content_section h2.p_title {color:{{ settings.product_title_color }};}
+  .p_price span {color:{{ settings.product_sale_price_color }};}
+  .p_price .price-item--regular {color:{{ settings.product_regular_price_color }};}
+  .p_price span.save_date {color:{{ settings.save_text_color }};}
+  
+  .add_to_art button {    color: {{ settings.add_to_cart_text_color }};
+    background-color: {{ settings.add_to_cart_button_bg }};}
+  .add_to_art button:hover {color: {{ settings.add_to_cart_text_color_on_hover }};
+    background-color:{{ settings.add_to_cart_text_color_bg_hover }};}
+  
+  .ship_area {
+    background:{{ settings.del_bg_color }};
+  
+  }
+  .ship_area h3 {
+    color: {{ settings.develry_heading_color }};
+  }
+  
+  .ship_area span {  
+  
+    color: {{ settings.ship_conent_color }};
+    
+  }
+  
+  .left_add_to_cart h2 {color: {{ settings.sticky_title_color }};}
+  
+  .right_add_to_cart button {background-color: {{ settings.stciky_addto_bg_color }}; color:{{ settings.stciky_addto_text_color }};}
+  .right_add_to_cart button:hover {background-color: {{ settings.stciky_addto_text_color_hover }}; color:{{ settings.stciky_addto_bg_color_hover }};}
+  
+  .wc_icon_color {color: {{ settings.review_star_color }} !important;}
+  .date_time_product {background:{{ settings.coun_down_bg }};}
+  .date_time_product p {color:{{ settings.coun_down_text_color }};}
+  .date_time_product #countdown {color:{{ settings.coun_down_date_color }};}
+  
+  .product_new_desp h4 {color:{{ settings.desp_headin_clr }};}
+  
+  
+  
+  .product_new_desp h2, .product_new_desp h1, .product_new_desp h3, .product_new_desp h5 {color:{{ settings.desp_headin_clr_main }};}
+  
+  .product_new_desp strong, .product_new_desp b {color:{{ settings.desp_headin_bold }};}
+  .product_new_desp ul li:before {color:{{ settings.desp_headin_tick }};}
+  
+  
+  
+  
+.carousel-inner.vertical {
+  height: 100%; /*Note: set specific height here if not, there will be some issues with IE browser*/
+}
+.carousel-inner.vertical > .item {
+  -webkit-transition: .6s ease-in-out top;
+  -o-transition: .6s ease-in-out top;
+  transition: .6s ease-in-out top;
+}
+
+@media all and (transform-3d),
+(-webkit-transform-3d) {
+  .carousel-inner.vertical > .item {
+    -webkit-transition: -webkit-transform .6s ease-in-out;
+    -o-transition: -o-transform .6s ease-in-out;
+    transition: transform .6s ease-in-out;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+  }
+  .carousel-inner.vertical > .item.next,
+  .carousel-inner.vertical > .item.active.right {
+    -webkit-transform: translate3d(0, 33.33%, 0);
+    transform: translate3d(0, 33.33%, 0);
+    top: 0;
+  }
+  .carousel-inner.vertical > .item.prev,
+  .carousel-inner.vertical > .item.active.left {
+    -webkit-transform: translate3d(0, -33.33%, 0);
+    transform: translate3d(0, -33.33%, 0);
+    top: 0;
+  }
+  .carousel-inner.vertical > .item.next.left,
+  .carousel-inner.vertical > .item.prev.right,
+  .carousel-inner.vertical > .item.active {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    top: 0;
+  }
+}
+
+.carousel-inner.vertical > .active {
+  top: 0;
+}
+.carousel-inner.vertical > .next,
+.carousel-inner.vertical > .prev {
+  top: 0;
+  height: 100%;
+  width: auto;
+}
+.carousel-inner.vertical > .next {
+  left: 0;
+  top: 33.33%;
+  right:0;
+}
+.carousel-inner.vertical > .prev {
+  left: 0;
+  top: -33.33%;
+  right:0;
+}
+.carousel-inner.vertical > .next.left,
+.carousel-inner.vertical > .prev.right {
+  top: 0;
+}
+.carousel-inner.vertical > .active.left {
+  left: 0;
+  top: -33.33%;
+  right:0;
+}
+.carousel-inner.vertical > .active.right {
+  left: 0;
+  top: 33.33%;
+  right:0;
+}
+
+#carousel-pager .carousel-control.left {
+    bottom: initial;
+    width: 100%;
+  color: #000;
+    top: -15px;
+}
+#carousel-pager .carousel-control.right {
+    top: initial;
+    width: 100%;
+  color: #000;
+  
+    bottom: -15px;
+}
+  .carousel-control {background-image: none !important;}
+  #carousel-pager img{ margin:10px 0; cursor:pointer;}
+  
+  
+  .spr-icon-star, .spr-icon-star-half-alt {
+    color:{{ settings.rev_stars_color }};
+}
+
+  .product-review_app h2.spr-header-title {color: {{ settings.rev_main_color }};}
+  
+  .product-review_app input[type="submit"] {    color: {{ settings.button_text_color_review }};
+    background-color: {{ settings.button_bg_color_review }};}
+  
+   .product-review_app input[type="hover"] {    color: {{ settings.button_text_color_review_hover }};
+    background-color: {{ settings.button_bg_color_review_hover }};}
+ 
+</style>
+
+
+
+{% schema %}
+  {
+    "name": "Product",
+    "class": "index-section featured-product-section",
+    "settings": [
+         {
+        "type": "checkbox",
+        "id": "home_featured_elble",
+        "label": "Enavle Product as Home Page"
+      },
+       
+	  {
+        "type": "product",
+        "id": "home_featured_product",
+        "label": "Product"
+      }
+      
+    ],
+    "presets": [{
+      "name": "Featured product",
+      "category": "Product"
+    }]
+  }
+{% endschema %}
+

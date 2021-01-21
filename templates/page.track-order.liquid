@@ -1,0 +1,605 @@
+<div class="full track_page_margin">
+<div class="page-width">
+  <div class="grid">
+    <div class="grid__item medium-up--five-sixths medium-up--push-one-twelfth">
+      
+
+      <div class="rte">
+        <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<script>// <![CDATA[
+var head  = document.getElementsByTagName('head')[0];
+        var link  = document.createElement('link');
+        link.id   = 'hulk_tracking_form';
+        link.rel  = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://orderlookup.hulkapps.com/css/tracking_form.css';
+        link.media = 'all';
+        head.appendChild(link);
+// ]]></script>
+<div class="back_imge" id="order_form">
+<div class="preview_box">
+  
+  <div class="full track_padding">
+<div class="modal-header">
+<h2 style="display:none;" class="title serachFormTitle" id="serachFormTitle">{{ settings.track_heading }}</h2>
+  <h2 class="title prg_title">{{ settings.track_heading }}</h2>
+  <span class="track_sub_head">{{ settings.track_sub_heading }}</span>
+</div>
+<form class="order_form" onsubmit="submitForm(event)"><input type="hidden" name="domain" value="testingtheme12.myshopify.com" /> <input type="hidden" name="required_filed" id="required_filed" /> <input type="hidden" name="display_layout" id="display_layout" />
+<div id="orderInnerSec"></div>
+</form>
+  
+  </div>
+  </div>
+</div>
+<div class="container list_view" id="list_view"><!-- Content here -->
+<div class="order_result pt-5">
+<h2 class="orderListTitle" id="listOrderTitle">Order Tracker</h2>
+<div class="back_btn" onclick="backBtn()"><svg class="back_image" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="25px" viewbox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve"> <g> <g> <path d="M403.675,500.211l374.098-374.114c10.301-10.276,15.967-24.016,15.967-38.667c0-14.659-5.667-28.39-15.967-38.683
+                                    l-32.78-32.764C734.707,5.675,720.959,0,706.309,0c-14.65,0-28.382,5.675-38.675,15.984L222.211,461.398
+                                    c-10.333,10.325-15.992,24.122-15.951,38.789c-0.041,14.732,5.61,28.512,15.951,38.845l445.008,444.984
+                                    c10.293,10.309,24.024,15.984,38.683,15.984c14.65,0,28.382-5.675,38.683-15.984l32.772-32.764
+                                    c21.325-21.325,21.325-56.041,0-77.358L403.675,500.211z"></path> </g> </g> </svg> <span class="back_btn">Back</span></div>
+<div id="order_result"></div>
+</div>
+<div id="listview_no_order"></div>
+</div>
+<div id="grid_view">
+<div class="container">
+<div class="order_result">
+<div class="modal-header">
+<h2 class="title" id="gridOrderTitle">{{ settings.track_heading }}</h2>
+<div class="back_btn" onclick="backBtn()"><svg class="back_image" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="25px" viewbox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve"> <g> <g> <path d="M403.675,500.211l374.098-374.114c10.301-10.276,15.967-24.016,15.967-38.667c0-14.659-5.667-28.39-15.967-38.683
+                                    l-32.78-32.764C734.707,5.675,720.959,0,706.309,0c-14.65,0-28.382,5.675-38.675,15.984L222.211,461.398
+                                    c-10.333,10.325-15.992,24.122-15.951,38.789c-0.041,14.732,5.61,28.512,15.951,38.845l445.008,444.984
+                                    c10.293,10.309,24.024,15.984,38.683,15.984c14.65,0,28.382-5.675,38.683-15.984l32.772-32.764
+                                    c21.325-21.325,21.325-56.041,0-77.358L403.675,500.211z"></path> </g> </g> </svg> <span class="back_btn" id="back_link_text"></span></div>
+</div>
+<div class="order_table" id="order_table"></div>
+<input type="hidden" class="no_any_order" id="no_any_order" /> <input type="hidden" class="show_tracking_url" id="show_tracking_url" /> <input type="hidden" class="store_name" id="store_name" /> <input type="hidden" class="order_date" id="order_date" /> <input type="hidden" class="order_shipping_arress" id="order_shipping_arress" /> <input type="hidden" class="order_status" id="order_status" /> <input type="hidden" class="order_tracking_url" id="order_tracking_url" />
+<div id="no_order"></div>
+</div>
+</div>
+</div>
+<script>// <![CDATA[
+function formatDate(date) {
+        var monthNames = [
+            "January", "February", "March",
+            "April", "May", "June", "July",
+            "August", "September", "October",
+            "November", "December"
+        ];
+
+        var date = new Date();
+
+        var day = date.getDate();
+        var monthIndex = date.getMonth();
+        var year = date.getFullYear();
+
+        return monthNames[monthIndex] + ' ' + day + ', ' + year;
+    }
+
+    var active = false;
+
+    function callXHR(url, type, params, callback) {
+        var http = new XMLHttpRequest();
+        var paramsArr= new Array();
+        // console.log(params);
+        for(var paramKey in params) {
+            paramsArr.push(paramKey+'='+params[paramKey]);
+        }
+        if(type.toLowerCase() === 'get') {
+            url += '?'+paramsArr.join('&');
+        }
+        http.open(type, url, true);
+
+        //Send the proper header information along with the request
+        http.setRequestHeader('Content-type', 'application/json');
+        http.setRequestHeader('Accept', 'application/json');
+
+        if(active)
+        {
+            http.abort();
+            callStatus = 'false';
+        }
+        else
+        {
+            callStatus = 'true';
+        }
+        active=true;
+
+        http.onreadystatechange = function() {//Call a function when the state changes.
+            if(http.readyState === 4 && http.status === 200) {
+                var data = JSON.parse(http.responseText);
+                active=false;
+                callback(data);
+            }
+            else if(http.readyState === 4) {
+                var data = JSON.parse(http.responseText);
+                active=false;
+                callback(data, true);
+            }
+        };
+        if(callStatus == 'true') {
+            if(type.toLowerCase() == 'post') {
+                http.send(JSON.stringify(params));
+            } else {
+                http.send(params);
+            }
+        }
+        // http.send(params);
+    }
+
+    var settingsParam = {
+        // domain: window.location.hostname
+        domain: document.getElementsByName('domain')[0].value
+    };
+    callXHR('https://orderlookup.hulkapps.com/shop/settings', 'GET', settingsParam, function(response, is_error) {
+        if(!is_error) {
+
+            var required_filed = document.getElementById('required_filed');
+            var display_layout = document.getElementById('display_layout');
+            var formTitle = document.getElementById('serachFormTitle');
+            var gridOrderTitle = document.getElementById('gridOrderTitle');
+            var listOrderTitle = document.getElementById('listOrderTitle');
+            var orderForm = document.getElementById('orderInnerSec');
+            var domain = document.getElementsByName('domain')[0].value;
+            var formInnerSection = '';
+            var buttonText = '';
+            var buttonColor = '';
+            var buttonBgColor = '';
+            var buttonBorderRadius = '';
+            var emailLabel = '';
+            var orderNumberLabel = '';
+            var emailPlaceholder = '';
+            var orderNumberPlaceholder = '';
+
+            if(response.back_link_text) {
+                document.getElementById('back_link_text').innerText = response.back_link_text;
+            } else {
+                document.getElementById("back_link_text").value = 'Back';
+            }
+            if(response.name_label) {
+                document.getElementById("store_name").value = response.name_label;
+            } else {
+                document.getElementById("store_name").value = 'Name';
+            }
+            if(response.order_date_label) {
+                document.getElementById("order_date").value = response.order_date_label;
+            } else {
+                document.getElementById("order_date").value = 'Order Date';
+            }
+            if(response.shipping_adress_label) {
+                document.getElementById("order_shipping_arress").value = response.shipping_adress_label;
+            } else {
+                document.getElementById("order_shipping_arress").value = 'Shipping Address';
+            }
+            if(response.order_status_label) {
+                document.getElementById("order_status").value = response.order_status_label;
+            } else {
+                document.getElementById("order_status").value = 'Order Status';
+            }
+            if(response.tracking_url_label) {
+                document.getElementById("order_tracking_url").value = response.tracking_url_label;
+            } else {
+                document.getElementById("order_tracking_url").value = 'Order Tracking URL';
+            }
+            if(response.no_order_text) {
+                document.getElementById("no_any_order").value = response.no_order_text;
+            } else {
+                document.getElementById("no_any_order").value = 'No any order found.';
+            }
+            if(response.show_tracking_url) {
+                document.getElementById("show_tracking_url").value = 'yes';
+            } else {
+                document.getElementById("show_tracking_url").value = 'no';
+            }
+            if(response.button_text) {
+                var buttonText = response.button_text;
+            }
+            if(response.text_color) {
+                buttonColor =  response.text_color;
+            }
+            if(response.serach_form_title) {
+                formTitle.innerHTML = response.serach_form_title;
+            }
+            if(response.order_list_title) {
+                gridOrderTitle.innerHTML = response.order_list_title;
+                listOrderTitle.innerHTML = response.order_list_title;
+            }
+            if(response.background_color) {
+                buttonBgColor = response.background_color;
+            }
+            if(response.border_radius) {
+                buttonBorderRadius = response.border_radius+'px';
+            }
+            if(response.required_field) {
+                required_filed.value = response.required_field;
+            }
+            if(response.display_layout) {
+                display_layout.value = response.display_layout;
+            }
+            if(response.show_input_label) {
+                if(response.email_address_label) {
+                    var emailLabel = response.email_address_label;
+                } else {
+                    var emailLabel = 'Email Address';
+                }
+                if(response.order_number_label) {
+                    var orderNumberLabel = response.order_number_label;
+                } else {
+                    var orderNumberLabel = 'Order Number';
+                }
+            }
+
+            if(response.email_address_placeholder) {
+                var emailPlaceholder = response.email_address_placeholder;
+            } else {
+                var emailPlaceholder = 'Enter Email Address';
+            }
+            if(response.order_number_placeholder) {
+                var orderNumberPlaceholder = response.order_number_placeholder;
+            } else {
+                var orderNumberPlaceholder = 'Enter Order Number';
+            }
+
+            if(required_filed.value == 'email_and_orderid') {
+                formInnerSection = '<div class="form_div" id="emailSec"><label for="exampleInputEmail1">'+emailLabel+':</label><input type="text" name="email" id="hulkemail" value="" placeholder="Enter your Email address..." autocomplete="off"><span id="emailError" class="error_msg"></span></div><div class="form_div" id="orderidSec"><label for="exampleInputPassword1">'+orderNumberLabel+':</label><input type="text" name="order_id" id="hulkorder_id" value="" placeholder="Enter your Order Number..." autocomplete="off"><span id="orderidError" class="error_msg"></span></div>';
+            }
+            if(required_filed.value == 'email') {
+                formInnerSection = '<div class="form_div" id="emailSec"><label for="exampleInputEmail1">'+emailLabel+':</label><input type="text" name="email" id="hulkemail" value="" placeholder="'+emailPlaceholder+'" autocomplete="off"><span id="emailError" class="error_msg"></span></div>';
+            }
+            if(required_filed.value == 'orderid') {
+                formInnerSection = '<div class="form_div" id="orderidSec"><label for="exampleInputPassword1">'+orderNumberLabel+':</label><input type="text" name="order_id" id="hulkorder_id" value="" placeholder="'+orderNumberPlaceholder+'" autocomplete="off"><span id="orderidError" class="error_msg"></span></div>';
+            }
+
+            if(response.showpage == false) {
+                document.getElementById('order_form').innerHTML = '<p>Oops! Page not found. The page is disabled from the app.</p>';
+            }
+
+            orderForm.innerHTML = '<div class="modal-body">'+formInnerSection+'<div class="modal-footer"><button type="submit" id="submit" class="submit_btn" style="color:'+buttonColor+'; background-color:'+buttonBgColor+';border-radius:'+buttonBorderRadius+'">'+buttonText+'</button><div id="disabled_sec" class="disabled_sec" style="display: none;"><button type="submit" id="disabled_btn" class="submit_btn" style="color:'+buttonColor+'; background-color:'+buttonBgColor+';border-radius:'+buttonBorderRadius+';cursor:no-drop;display: block"><i class="fa fa-circle-o-notch fa-spin"></i> Please Wait..</button></div></div>';
+
+
+        }
+    });
+
+    function backBtn() {
+
+        document.getElementById('order_form').style.display = 'block';
+        document.getElementById('grid_view').style.display = 'none';
+        document.getElementById('list_view').style.display = 'none';
+        document.getElementById('order_table').innerHTML = '';
+        document.getElementById('no_order').innerHTML = '';
+        document.getElementById('listview_no_order').innerHTML = '';
+        document.getElementById('order_result').innerHTML = '';
+        document.getElementsByClassName("order_form")[0].reset();
+        document.getElementById('disabled_sec').style.display = 'none';
+        document.getElementById('submit').style.display = 'block';
+
+    }
+
+
+
+    function submitForm(event) {
+
+        event.preventDefault();
+        var email = '';
+        var orderId = '';
+        var domain = document.getElementsByName('domain')[0].value;
+        var required_filed = document.getElementsByName('required_filed')[0].value;
+        var display_layout = document.getElementsByName('display_layout')[0].value;
+        var numbers = /^[0-9]+$/;
+
+        if(required_filed == 'email_and_orderid')
+        {
+            email = document.getElementById('hulkemail').value;
+            orderId = document.getElementById('hulkorder_id').value;
+
+            if(email == '')
+            {
+                document.getElementById('emailError').innerHTML = 'Please enter your registered email address';
+                document.getElementById('orderidError').innerHTML = '';
+                return false;
+            }
+            else if(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email) == false)
+            {
+                document.getElementById('emailError').innerHTML = 'Please enter a valid email address';
+                document.getElementById('orderidError').innerHTML = '';
+                return false;
+            }
+            else if(orderId == '')
+            {
+                document.getElementById('orderidError').innerHTML = 'Please enter your order number';
+                document.getElementById('emailError').innerHTML = '';
+                return false;
+            }
+            else {
+                document.getElementById('emailError').innerHTML = '';
+                document.getElementById('orderidError').innerHTML = '';
+                document.getElementById('disabled_sec').style.display = 'block';
+                document.getElementById('submit').style.display = 'none';
+            }
+        }
+        else if(required_filed == 'email')
+        {
+            email = document.getElementById('hulkemail').value;
+
+            if(email == '')
+            {
+                document.getElementById('emailError').innerHTML = 'Please enter your registered email address';
+                return false;
+            }
+            else if(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email) == false)
+            {
+                document.getElementById('emailError').innerHTML = 'Please enter a valid email address';
+                return false;
+            }
+            else {
+                document.getElementById('emailError').innerHTML = '';
+                document.getElementById('disabled_sec').style.display = 'block';
+                document.getElementById('submit').style.display = 'none';
+            }
+        }
+        else
+        {
+            orderId = document.getElementById('hulkorder_id').value;
+
+            if(email != '' && /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email) == false)
+            {
+                document.getElementById('emailError').innerHTML = 'Please enter a valid email address';
+                return false;
+            }
+            else if(orderId == '')
+            {
+                document.getElementById('orderidError').innerHTML = 'Please enter your order number';
+                return false;
+            }
+            else {
+                document.getElementById('orderidError').innerHTML = '';
+                document.getElementById('disabled_sec').style.display = 'block';
+                document.getElementById('submit').style.display = 'none';
+            }
+        }
+
+        var url = "https://orderlookup.hulkapps.com/orderSearch";
+        var params = {
+            'email': email,
+            'order_id': orderId,
+            'domain': domain,
+            '_token': "K6otihF3inWGbY1v0u9QWAGep2kPzxeXAPmjFdOH",
+        };
+        callXHR(url, 'POST', params, function(response, is_error){
+            var storeNameLabel = document.getElementById('store_name').value;
+            var orderDateLabel = document.getElementById('order_date').value;
+            var orderShippingAddressLabel = document.getElementById('order_shipping_arress').value;
+            var orderStatusLabel = document.getElementById('order_status').value;
+            var orderTrackingUrlLabel = document.getElementById('order_tracking_url').value;
+            var showOrderTrackingUrl = document.getElementById('show_tracking_url').value;
+
+            document.getElementById('order_form').style.display = 'none';
+            if(display_layout == 1) {
+                document.getElementById('grid_view').style.display = 'block';
+                document.getElementById('list_view').style.display = 'none';
+            }
+            else if(display_layout == 0){
+
+                document.getElementById('list_view').style.display = 'block';
+                document.getElementById('grid_view').style.display = 'none';
+            }
+            if(!is_error)
+            {
+                if(response.orders == 'Error') {
+
+                    var heading = document.createElement("h4");
+
+                    var span1 = heading.appendChild(document.createElement("span")).innerHTML = 'Oops! Something went wrong. Please <a href="javascript:window.location.reload()">try again</a>.';
+                    if(display_layout == 1)
+                    {
+                        document.getElementById('no_order').appendChild(heading);
+                    }
+                    else
+                    {
+                        document.getElementById('listview_no_order').appendChild(heading);
+                    }
+                }
+                else if(response.orders != '')
+                {
+                    var orders = response.orders;
+
+                    var monthNames = [
+                        "January", "February", "March",
+                        "April", "May", "June", "July",
+                        "August", "September", "October",
+                        "November", "December"
+                    ];
+
+
+                    for(key in orders)
+                    {
+
+                        orderid = orders[key].order_number;
+
+                        var date = new Date(orders[key].created_at);
+                        var day = date.getDate();
+                        var monthIndex = date.getMonth();
+                        var year = date.getFullYear();
+
+                        var orderDate = monthNames[monthIndex] + ' ' + day + ', ' + year;
+
+                        if(orders[0].customer != null) {
+                            firstName = orders[0].customer.first_name;
+                            lastName = orders[0].customer.last_name;
+
+                        } else {
+                            firstName = '';
+                            lastName = '';
+                        }
+
+                        var shippingaddress = orders[key].shipping_address;
+                        if(shippingaddress != null) {
+                            address1 = shippingaddress.address1;
+                            address2 = ' '+ shippingaddress.address2 + ',';
+                            city = ' '+ shippingaddress.city;
+                            provincecode = ' '+ shippingaddress.province_code;
+                            zip = ' '+ shippingaddress.zip + ',';
+                            country = ' '+ shippingaddress.country;
+                        }
+                        else
+                        {
+                            address1 = '';
+                            address2 = '';
+                            city = '';
+                            provincecode = '';
+                            zip = '';
+                            country = '';
+                        }
+                        if(orders[key].cancelled_at != null){
+                            var orderStatus = 'Cancelled';
+                        } else if(orders[key].fulfillment_status == null){
+                            var orderStatus = 'Being Processed';
+                        }else {
+                            var orderStatus = 'Shipped';
+                        }
+
+                        if(orders[key].fulfillments != '' && orders[key].fulfillments[0].tracking_url != undefined) {
+                            var trakingUrl = orders[key].fulfillments[0].tracking_url;
+                        } else {
+                            var trakingUrl = orders[key].order_status_url;
+                        }
+
+                        if(display_layout == 1)
+                        {
+
+                            var trackOrder = trakingUrl + "<a href="+trakingUrl+" target='_blank'> Track my order</a>";
+
+                            var heading = document.createElement("h3");
+                            heading.classList.add("order_id");
+                            var span1 = heading.appendChild(document.createElement("span")).innerHTML = "Order ";
+                            var span2 = heading.appendChild(document.createElement("span")).innerHTML = "#"+ orderid;
+
+                            var table = document.createElement("table");
+                            table.classList.add("table");
+                            var tbody = document.createElement("tbody");
+                            table.appendChild(tbody);
+
+                            var tr = new Array();
+                            var th = new Array();
+                            var td = new Array();
+
+                            if(showOrderTrackingUrl == 'yes') {
+                                var tableCount = 4;
+                            } else {
+                                var tableCount = 3;
+                            }
+
+                            for(i=0; i<=tableCount; i++)
+                            {
+                                tr[i] = document.createElement("tr");
+                                tbody.appendChild(tr[i]);
+
+                                th[i] = tr[i].appendChild(document.createElement("th"));
+                                th[i].setAttribute("scope", "row");
+
+                                td[i] = tr[i].appendChild(document.createElement("td"));
+                            }
+                            th[0].innerHTML = storeNameLabel;
+                            th[1].innerHTML = orderDateLabel;
+                            th[2].innerHTML = orderShippingAddressLabel;
+                            th[3].innerHTML = orderStatusLabel;
+
+                            td[0].innerHTML = firstName +' '+ lastName;
+                            td[1].innerHTML = orderDate;
+                            td[2].innerHTML = address1+''+address2+''+city+''+provincecode+''+zip+''+country;
+                            td[3].innerHTML = orderStatus;
+                            td[3].style.textTransform = "capitalize";
+
+                            if(showOrderTrackingUrl == 'yes') {
+                                th[4].innerHTML = orderTrackingUrlLabel;
+                                td[4].innerHTML = trackOrder;
+                            }
+
+                            document.getElementById('order_table').appendChild(heading);
+                            document.getElementById('order_table').appendChild(table);
+                        }
+                        else
+                        {
+                            var trackOrder = '';
+                            if(showOrderTrackingUrl == 'yes') {
+                                var trackOrderUrl = "<span style='display:inline-block;'>" + trakingUrl + "</span><span class='url_link'><a href=" + trakingUrl + " target='_blank'>Track my order</a></span>";
+                                trackOrder = '<div class="user_address"><span class="order_title"><span class="order_icons"><svg class="align-middle" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18"><g id="Group_1056" data-name="Group 1056" opacity="0.5"><g id="gps-fixed" transform="translate(0 0)"><path id="Path_13" data-name="Path 13" d="M9,5.727A3.273,3.273,0,1,0,12.273,9,3.282,3.282,0,0,0,9,5.727Zm7.276,2.406a7.308,7.308,0,0,0-6.408-6.41.055.055,0,0,1-.049-.054V.818A.818.818,0,0,0,9,0H9a.818.818,0,0,0-.818.818v.85a.055.055,0,0,1-.049.055A7.159,7.159,0,0,0,1.723,8.132a.055.055,0,0,1-.055.049H.818A.818.818,0,0,0,0,9H0a.818.818,0,0,0,.818.818H1.67a.055.055,0,0,1,.054.048,7.308,7.308,0,0,0,6.408,6.41.055.055,0,0,1,.049.054v.85A.818.818,0,0,0,9,18H9a.818.818,0,0,0,.818-.818V16.33a.055.055,0,0,1,.048-.054,7.308,7.308,0,0,0,6.41-6.408.055.055,0,0,1,.054-.049h.85A.818.818,0,0,0,18,9h0a.818.818,0,0,0-.818-.818H16.33A.055.055,0,0,1,16.276,8.134ZM8.3,14.686A5.681,5.681,0,0,1,3.314,9.7,5.763,5.763,0,0,1,9.7,3.314,5.681,5.681,0,0,1,14.686,8.3,5.763,5.763,0,0,1,8.3,14.686Z" fill="#616c79"/></g></g></svg></span>'+orderTrackingUrlLabel+'</span><p class="order_data">'+trackOrderUrl+'</p></div></div>';
+                                //var trackOrder = "<span style='display:inline-block;'>" + trakingUrl + "</span><span class='url_link'><a href=" + trakingUrl + " target='_blank'>Track my order</a></span>";
+                            }
+
+                            var division = document.createElement("div");
+                            division.classList.add("detail_table");
+                            division.classList.add("bg-light");
+                            division.classList.add("p-4");
+                            division.classList.add("rounded");
+                            division.classList.add("border");
+
+                            division.innerHTML = '<div class="order_row"><div class="order_number"><span class="order_title"><span class="order_icons"><svg class="align-middle" xmlns="http://www.w3.org/2000/svg" width="12.716" height="12.103" viewBox="0 0 12.716 12.103"><g id="Group_1055" data-name="Group 1055" transform="translate(0.5 -77.939)" opacity="0.5"><g id="Group_1050" data-name="Group 1050" transform="translate(0 83.344)"><g id="Group_1049" data-name="Group 1049"><path id="Path_8" data-name="Path 8" d="M11.243,235.318H.473c-.261,0-.473.29-.473.647s.212.647.473.647H11.243c.261,0,.473-.289.473-.647S11.5,235.318,11.243,235.318Z" transform="translate(0 -235.318)" fill="#616c79" stroke="#5d6874" stroke-width="1"/></g></g><g id="Group_1052" data-name="Group 1052" transform="translate(0 78.439)"><g id="Group_1051" data-name="Group 1051"><path id="Path_9" data-name="Path 9" d="M11.243,78.439H.473c-.261,0-.473.29-.473.647s.212.647.473.647H11.243c.261,0,.473-.29.473-.647S11.5,78.439,11.243,78.439Z" transform="translate(0 -78.439)" fill="#616c79" stroke="#5d6874" stroke-width="1"/></g></g><g id="Group_1054" data-name="Group 1054" transform="translate(0 88.249)"><g id="Group_1053" data-name="Group 1053"><path id="Path_10" data-name="Path 10" d="M11.243,392.2H.473c-.261,0-.473.289-.473.647s.212.647.473.647H11.243c.261,0,.473-.289.473-.647S11.5,392.2,11.243,392.2Z" transform="translate(0 -392.197)" fill="#616c79" stroke="#5d6874" stroke-width="1"/></g></g></g></svg> </span>Order Number</span><p class="order_data">#'+orderid+'</p></div><div class="user_name"><span class="order_title"><span class="order_icons"><svg class="align-middle" xmlns="http://www.w3.org/2000/svg" width="14.666" height="14.71" viewBox="0 0 14.666 14.71"><g id="Group_1044" data-name="Group 1044" transform="translate(-0.33 0.499)" opacity="0.5"><g id="Group_1043" data-name="Group 1043" transform="translate(0.831 0.001)"><path id="Path_5" data-name="Path 5" d="M12.51,8.863a6.828,6.828,0,0,0-2.6-1.634,3.963,3.963,0,1,0-4.484,0,6.868,6.868,0,0,0-4.588,5.9.535.535,0,0,0,.532.582h0a.536.536,0,0,0,.532-.493,5.784,5.784,0,0,1,11.526,0,.536.536,0,0,0,.532.493h0a.535.535,0,0,0,.532-.582A6.8,6.8,0,0,0,12.51,8.863ZM7.759,6.854a2.892,2.892,0,1,1,2.794-2.794A2.895,2.895,0,0,1,7.759,6.854Z" transform="translate(-0.831 -0.001)" fill="#616c79" stroke="#616c79" stroke-width="1"/></g></g></svg> </span>'+storeNameLabel+'</span><p class="order_data">'+firstName +' '+ lastName+'</p></div><div class="user_address"><span class="order_title"><span class="order_icons"><svg xmlns="http://www.w3.org/2000/svg" width="13.491" height="16.379" viewBox="0 0 13.491 16.379"><g id="place" transform="translate(-48.442 0.4)" opacity="0.5"><g id="Group_1046" data-name="Group 1046" transform="translate(48.886)"><g id="Group_1045" data-name="Group 1045" transform="translate(0)"><path id="Path_6" data-name="Path 6" d="M60.359,2.709a6.29,6.29,0,0,0-10.342,0,6.291,6.291,0,0,0-.732,5.8,4.954,4.954,0,0,0,.913,1.508l4.576,5.374a.544.544,0,0,0,.829,0l4.574-5.373a4.959,4.959,0,0,0,.913-1.506A6.292,6.292,0,0,0,60.359,2.709ZM60.07,8.127A3.886,3.886,0,0,1,59.351,9.3l0,0-4.161,4.887L51.024,9.3a3.888,3.888,0,0,1-.72-1.18,5.2,5.2,0,0,1,.608-4.8,5.2,5.2,0,0,1,8.549,0A5.2,5.2,0,0,1,60.07,8.127Z" transform="translate(-48.886)" fill="#616c79" stroke="#616c79" stroke-width="0.8"/></g></g><g id="Group_1048" data-name="Group 1048" transform="translate(52.538 3.633)"><g id="Group_1047" data-name="Group 1047" transform="translate(0)"><path id="Path_7" data-name="Path 7" d="M158.4,106.219a2.65,2.65,0,1,0,2.65,2.65A2.653,2.653,0,0,0,158.4,106.219Z" transform="translate(-155.754 -106.219)" fill="#616c79" stroke="#616c79" stroke-width="0.8"/></g></g></g></svg></span>'+orderShippingAddressLabel+'</span><p class="order_data">'+address1+''+address2+''+city+''+provincecode+''+zip+''+country+'</p></div></div><div class="order_row"><div class="order_number"><span class="order_title"><span class="order_icons"><svg class="align-middle" xmlns="http://www.w3.org/2000/svg" width="13.944" height="14.94" viewBox="0 0 13.944 14.94"><g id="calendar-page-empty" transform="translate(-17.776 0.5)" opacity="0.5"><path id="Path_11" data-name="Path 11" d="M30.925,2.287a.956.956,0,0,0-.7-.3h-1V1.245a1.2,1.2,0,0,0-.366-.879A1.2,1.2,0,0,0,27.984,0h-.5a1.2,1.2,0,0,0-.879.366,1.2,1.2,0,0,0-.366.879v.747H23.255V1.245a1.2,1.2,0,0,0-.366-.879A1.2,1.2,0,0,0,22.01,0h-.5a1.2,1.2,0,0,0-.879.366,1.2,1.2,0,0,0-.366.879v.747h-1a.957.957,0,0,0-.7.3.957.957,0,0,0-.3.7v9.957a1.01,1.01,0,0,0,1,1H30.224a1.01,1.01,0,0,0,1-1V2.987A.957.957,0,0,0,30.925,2.287ZM27.238,1.245A.239.239,0,0,1,27.486,1h.5a.24.24,0,0,1,.249.249v2.24a.24.24,0,0,1-.249.249h-.5a.239.239,0,0,1-.249-.249Zm-5.974,0A.24.24,0,0,1,21.512,1h.5a.24.24,0,0,1,.249.249v2.24a.24.24,0,0,1-.249.249h-.5a.24.24,0,0,1-.249-.249Zm8.961,11.7H19.272V4.979H30.224Z" fill="#616c79" stroke="#616c79" stroke-width="1"/></g></svg></span>'+orderDateLabel+'</span><p class="order_data">'+orderDate+'</p></div><div class="user_name"><span class="order_title"><span class="order_icons"><svg class="align-middle" xmlns="http://www.w3.org/2000/svg" width="12.764" height="16.471" viewBox="0 0 12.764 16.471"><path id="Path_12" data-name="Path 12" d="M154.9,16.471h10.94a.912.912,0,0,0,.912-.912v-11a.912.912,0,0,0-.912-.912H163.1V2.735a2.735,2.735,0,1,0-5.47,0v.912H154.9a.912.912,0,0,0-.912.912v11A.912.912,0,0,0,154.9,16.471Zm4.558-13.736a.912.912,0,1,1,1.823,0v.912h-1.823ZM155.807,5.47h1.823v.912a.912.912,0,1,0,1.823,0V5.47h1.823v.912a.912.912,0,0,0,1.823,0V5.47h1.823v9.178h-9.117Z" transform="translate(-153.984)" fill="#616c79" opacity="0.5"/></svg> </span>'+orderStatusLabel+'</span><p class="order_data">'+orderStatus+'</p></div>'+trackOrder;
+
+                            document.getElementById('order_result').appendChild(division);
+                        }
+
+                    }
+
+                }
+                else
+                {
+                    var heading = document.createElement("h4");
+                    var mimg = document.createElement("img");
+                    mimg.classList.add("no_order_img");
+                    mimg.src = "https://orderlookup.hulkapps.com/shopping-purse-icon.svg";
+
+                    var noOrderText = document.getElementById('no_any_order').value;
+                    var span1 = heading.appendChild(document.createElement("span")).innerHTML = noOrderText;
+
+                    if(display_layout == 1)
+                    {
+                        document.getElementById('no_order').appendChild(mimg);
+                        document.getElementById('no_order').appendChild(heading);
+                    }
+                    else
+                    {
+                        document.getElementById('listview_no_order').appendChild(mimg);
+                        document.getElementById('listview_no_order').appendChild(heading);
+                    }
+                }
+            }
+
+        });
+    }
+// ]]></script>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<style>
+.order_form button[type="submit"] {
+    background-color: {{ settings.track_button_color_bg }} !important;
+  color:{{ settings.track_button_color }} !important; }
+  
+  .order_form button[type="submit"]:hover {
+    background-color: {{ settings.track_button_color_bg_hover }} !important;
+  color:{{ settings.track_button_color_hover }} !important; }
+  
+  
+  
+  .back_imge .preview_box {padding:0 !important;}
+  .track_sub_head {
+    color: {{ settings.track_sub_heading_color }}; }
+  
+  .back_imge .preview_box .modal-header .title {color: {{ settings.track_heading_color }};}
+  
+  .track_page_margin {background: {{ settings.page_bg_color }};}
+  
+  .back_imge .preview_box {background: {{ settings.form_bg_color }}; !important; border: 2px solid {{ settings.form_border_color }};}
+  
+
+  
+</style>
+

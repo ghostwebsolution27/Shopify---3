@@ -1,0 +1,60 @@
+<div class="full three_widget not_on_home">
+  <div class="container">
+    
+    
+    <div class="col-sm-4"> 
+       {%- if settings.suport_image -%}  
+      <img src="{{ settings.suport_image | img_url: 'original' }}" alt="" />
+        {%- else -%} 
+      <img src="https://cdn.shopify.com/s/files/1/0272/3014/2602/files/1_1024x1024.png?v=1575874657" alt="" />
+       {%- endif -%} 
+      
+      <h2>{{ settings.support_text }}</h2>
+      <p>{{ settings.support_textare }}</p>
+    </div>
+     <div class="col-sm-4"> 
+        {%- if settings.suport_image_1 -%}  
+       <img src="{{ settings.suport_image_1 | img_url: 'original' }}" alt="" />
+        {%- else -%} 
+      <img src="https://cdn.shopify.com/s/files/1/0272/3014/2602/files/3_1024x1024.png?v=1575874669" alt="" />
+       {%- endif -%} 
+       
+      <h2>{{ settings.support_text_1 }}</h2>
+      <p>{{ settings.support_textare_1 }}</p>
+    </div>
+     <div class="col-sm-4"> 
+        {%- if settings.suport_image_2 -%}  
+       <img src="{{ settings.suport_image_2 | img_url: 'original' }}" alt="" />
+       {%- else -%} 
+      <img src="https://cdn.shopify.com/s/files/1/0272/3014/2602/files/2_1024x1024.png?v=1575874681" alt="" />
+       {%- endif -%} 
+       
+      <h2>{{ settings.support_text_2 }}</h2>
+      <p>{{ settings.support_textare_2 }}</p>
+    </div>
+   
+  
+    
+
+    
+
+      
+    
+    
+    
+      
+        <style>
+      .three_widget h2 {color:{{ settings.support_text_color }};}
+      .three_widget p {color:{{ settings.support_textare_color }};}
+          
+          .three_widget {
+    background: {{ settings.bacg_color }};
+      }
+    </style>
+      
+      
+
+    
+    
+  </div>
+</div>

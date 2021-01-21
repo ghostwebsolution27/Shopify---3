@@ -1,0 +1,55 @@
+{% include 'vncpc' %}{% comment %}
+  The contents of the cart.liquid template can be found in /sections/cart-template.liquid
+{% endcomment %}
+
+<div class="full cart_main_page">
+
+{% section 'my-cart' %}
+</div>
+
+
+
+
+<style>
+  
+#vncvtw {background:{{ settings.coun_down_bg_cart }}  !important;}
+ #vncvtw p {color:{{ settings.coun_down_text_color_cart }}  !important;}
+ #vncvtw #vncvtd {color:{{ settings.coun_down_date_color_cart }} !important;}
+  
+  
+  {%- unless settings.chekout_cart_after_subhaeding == nil -%}
+  .cart_main_page .cart__submit-controls .cart__submit {padding: 15px 0 14px;}
+  {%- endunless -%}
+  
+  .cart_main_page .cart__submit-controls .cart__submit {background: {{ settings.chekout_cart_color_bg }};
+    color: {{ settings.chekout_cart_color_text }};}
+.cart_main_page .cart__submit-controls .cart__submit:hover {color: {{ settings.chekout_cart_color_hover }};
+    background: {{ settings.chekout_cart_color_bg_hover }};}
+  h3.cart_f_title a {color: {{ settings.product_title_colllor }};}
+  .my_price span  {color: {{ settings.product_price_colllor }};}
+ 
+  .cart_optin_var ul li {color: {{ settings.variants_price_cart }};}
+  
+  .main__header #vncvtw {color:{{ settings.coun_down_text_color_cart }} !important;}
+  
+  .qulaidied_shipping { background:{{ settings.shop_banner_color }};  border:2px solid {{ settings.shop_banner_color_border }};}
+.qulaidied_shipping p { color:{{ settings.shop_banner_color_text }};}
+  
+  
+  .ist_cart_sec .cart_bold_text {color:{{ settings.right_heading_one_color }};}
+  .ist_cart_sec .thik_color {color:{{ settings.right_heading_one_price_color }}; {% if settings.enable_srtike_though_one %} text-decoration: line-through; {% endif %} }
+  
+  
+  .sec_cart_sec .cart_bold_text {color:{{ settings.right_heading_one_two }};}
+  .sec_cart_sec .thik_color {color:{{ settings.right_heading_two_price_color }}; }
+  
+  .trd_cart_sec  .cart_bold_text {color:{{ settings.chekout_shiping_after_color }};}
+  
+  .cart_main_page .cart__submit-controls .cart__submit h4 {color:{{ settings.cart_sub_heaing_color_button }};}
+  .cart_main_page .cart__submit-controls .cart__submit h4:hover {color:{{ settings.cart_sub_heaing_color_button_on_hover }};}
+  
+  .trd_cart_sec .thik_color {color:{{ settings.chekout_shiping_after_3_color }};}
+  
+
+</style>
+
